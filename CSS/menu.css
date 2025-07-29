@@ -20,14 +20,11 @@
     justify-content: center;
 }
 
-menu-about ul li {
-    padding: 0 15px;
-}
+
 .menu-about ul li a{
     text-decoration: none;
     color: var(--about-a);
     position: relative;
-    padding: 0;
       
 }
 

@@ -90,23 +90,27 @@
 .intro-img-bsardou img {
     max-width: 80%;
     height: auto;
-}
+} 
 
 /*Estilo para a seção de FOTOS*/
 
 .main-bg-gallery {
     width: 100%;
-    max-width: 36rem;
-    max-height: 36rem;
+    max-width: 30rem;
+    max-height: 30rem;
     overflow: hidden;
     justify-content: center;
     display: flex;
+    position: relative;
 }
 
 .gallery-img img {
+    width: 20%; /* Garante que a imagem seja responsiva */
     transition: all 300ms ease-in-out;
 }
 
 .gallery-img img:hover {
-    transform: translate(-3%, 3%) scale (1.2) rotate(5deg)
+    transform: translate(-3%, 3%) scale(1.2);
 }
+
+

@@ -8,7 +8,7 @@
     --color-button: #33333311;
     --color-p: #7E7E7E;
     --color-rodape:#F9F9F9;
-    --color-transition: rgb(3, 1, 79);
+    --color-transition: #03014f;
     --color-button-transition:#ECE8E1;
     --color-button-ttn: #E0BBE4;
     --color-buttton-ttn2: #2f2f4d1f;
@@ -17,5 +17,9 @@
     --color-bg-meio: #09094b;
     --color-bg-fim: #c4c4c2;
     --color-bg-top: #E0FFFF;
+    --color-login-acesso: #ADD8E6;
+    --color-login-acesso-texto-menu: #333;
+    --color-login-acesso-transicao: #87CEEB;
+    --color-layout-menu-lateral-barra: #d6e8f8;
    
 }
