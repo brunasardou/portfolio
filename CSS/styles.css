@@ -1,0 +1,21 @@
+:root {
+    --primary-color: #f0f8ff;
+    --menu-color: #111111;
+    --menu-ant-rdp:#292929;
+    --about-color: #0a72cc94;
+    --about-a: #f0f8ff;
+    --color-button-letra:#FF4655;
+    --color-button: #33333311;
+    --color-p: #7E7E7E;
+    --color-rodape:#F9F9F9;
+    --color-transition: rgb(3, 1, 79);
+    --color-button-transition:#ECE8E1;
+    --color-button-ttn: #E0BBE4;
+    --color-buttton-ttn2: #2f2f4d1f;
+    --color-button-menu: #4682B4;
+    --color-button-botao:white;
+    --color-bg-meio: #09094b;
+    --color-bg-fim: #c4c4c2;
+    --color-bg-top: #E0FFFF;
+   
+}

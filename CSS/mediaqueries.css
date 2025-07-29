@@ -1,0 +1,83 @@
+/* Media Queries */
+/* Regras de mídia para responsividade */
+
+@media (max-width: 768px) {
+    .main-bg-top {
+        grid-template-columns: 1fr; /* Alterar layout para uma coluna em telas menores */
+        height: auto; /* Ajustar altura para se adequar ao conteúdo */
+        font-size: 18px;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .main-bg-meio {
+        grid-template-columns: 1fr; /* Alterar layout para uma coluna em telas menores */
+        height: auto; /* Ajustar altura para se adequar ao conteúdo */
+        font-size: 18px;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .main-bg-fim {
+        grid-template-columns: 1fr; /* Alterar layout para uma coluna em telas menores */
+        height: auto; /* Ajustar altura para se adequar ao conteúdo */
+        width: 100%;
+    }
+
+    .buton-fim {
+        width: 90%; /* Ajustar o tamanho do botão para caber na tela menor */
+        font-size: 18px; /* Reduzir o tamanho da fonte para telas menores */
+        margin: 20px auto; /* Garantir espaçamento suficiente em telas menores */
+    }
+}
+@media (max-width: 768px) {
+    .main-bg-ant-rodape {
+        grid-template-columns: 1fr; /* Alterar layout para uma coluna em telas menores */
+        height: auto; /* Ajustar altura para se adequar ao conteúdo */
+        font-size: 18px;
+        width: 100%;
+    }
+
+}
+@media (max-width: 768px) {
+    .main-bg-rodape-1 {
+        grid-template-columns: 1fr; /* Alterar layout para uma coluna em telas menores */
+        height: auto; /* Ajustar altura para se adequar ao conteúdo */
+        font-size: 18px;
+        width: 100%;
+    }
+
+}
+@media (max-width: 768px) {
+    .main-bg-rodape-2 {
+        grid-template-columns: 1fr; /* Alterar layout para uma coluna em telas menores */
+        height: auto; /* Ajustar altura para se adequar ao conteúdo */
+        font-size: 18px;
+        width: 100%;
+    }
+
+}
+@media (max-width: 768px) {
+    .main-bg-rodape-3 {
+        grid-template-columns: 1fr; /* Alterar layout para uma coluna em telas menores */
+        height: auto; /* Ajustar altura para se adequar ao conteúdo */
+        font-size: 18px;
+        width: 100%;
+    }
+
+}
+
+
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+    .menu-about {
+        height: auto; /* Ajustar altura para se adequar ao conteúdo */
+        width: 100%; /* Reduzir a largura do menu em telas menores */
+        font-size: 10px;
+    }
+
+}
