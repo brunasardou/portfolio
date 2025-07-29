@@ -104,9 +104,20 @@
     position: relative;
 }
 
+.gallery-img {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
 .gallery-img img {
-    width: 20%; /* Garante que a imagem seja responsiva */
-    transition: all 300ms ease-in-out;
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .gallery-img img:hover {
