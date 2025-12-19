@@ -1,5 +1,5 @@
 @echo off
-cd /d C:\Projeto\portfolio
+cd /d F:\Projeto\portfolio
 git add .
 git commit -m "Atualização rápida"
 git push

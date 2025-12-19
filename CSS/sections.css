@@ -1,127 +1,218 @@
-
-/* Estilo para a section WELCOME*/
-.main-bg-top{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    color: var(--color-bg-top);
-    align-items: center;
-    min-height: 50vh;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-  
-.main-bg-top-intro-text {
-    display:flex;
-    flex-flow: column;
-    justify-content: center;
-    font-size: 15px;
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: cursive;
+  background-color: var(--about-a);
+  background-position: center center;
+  background: #ffffff;
+}
+
+/* Estilos de seção unificados */
+section{
+  width: 100%;
+  height: auto;
+  text-align: left;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  max-width: 1800px;   /* ajuste: 1400 / 1500 / 1600 (igual você achar melhor) */
+  margin: 0 auto;  
+}
+
+/* Centralização utilitária (se você usa essas classes no HTML) */
+.top, .meio, .fim, .rodape-social{
+  text-align: center;
+}
+
+/* ===== Layout base das seções (SEM cor fixa) ===== */
+/* IMPORTANTÍSSIMO: não force o azul aqui, senão o site fica todo azul */
+.main-bg-top,
+.main-bg-meio,
+.main-bg-meio2,
+.main-bg-fim,
+.main-bg-galeria{
+  padding: 100px 40px;
+  background-color: transparent; /* <- deixa o bg-* mandar */
+}
+
+/* ===== FUNDOS (controle da imagem + cor de cada tema) ===== */
+
+/* Tema escuro (igual seu original nas seções principais) */
+.bg-principal{
+  background-image: url('../img/img-principal.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--about-a); /* azul escuro base */
+  color: var(--about-a);            /* você usa var(--about-a) no texto/links */
+}
+
+/* Tema claro / quadriculado (igual o bloco “Fotos/Projetos”) */
+.bg-meio{
+  background-image: url('../img/bg-img-meio.svg');
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
+  background-color: #d9d9d9; /* cinza base para não ficar azul por baixo */
+  color: #111;               /* texto escuro no bloco claro */
+}
+
+/* Se quiser o quadriculado sem repetir (quase nunca precisa) */
+.bg-meio-cover{
+  background-image: url('../img/bg-img-meio.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #d9d9d9;
+  color: #111;
+}
+
+/* ===== Rodapés ===== */
+.main-bg-ant-rodape{
+  background-color: var(--menu-ant-rdp);
+  color: var(--about-a);
+  padding: 10px;
+  text-align: center;
+}
+
+.main-bg-rodape-1,
+.main-bg-rodape-2,
+.main-bg-rodape-3{
+  background-color: var(--menu-color);
+  color: var(--about-a);
+  padding: 10px;
+  text-align: center;
+}
+
+/* Mantive seu efeito do gif no parágrafo do rodapé 2 */
+.main-bg-rodape-2 p{
+  background-image: url('../img/gif.gif');
+  font-family: sans-serif;
+  color: var(--color-p);
+  font-size: 11px;
+}
+/* ===== CONTATO / SOCIAL (corrigir itens grudados) ===== */
+.main-bg-ant-rodape ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 0;
+  padding: 18px 0;
+}
+
+.main-bg-ant-rodape ul li{
+  margin: 0;
+  padding: 0;
+}
+
+.main-bg-ant-rodape ul li a{
+  display: inline-block;
+  padding: 8px 10px;
+  text-decoration: none;
+}
+/* ===== PADRÃO DE LARGURA (mesmo eixo em todas as seções) ===== */
+.section-wrap,
+.main-bg-top-intro,
+.sobre-wrapper,
+.oqfaco-wrapper,
+.projetos-container{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== WELCOME (hero) ===== */
+
+.main-bg-top{
+  position: relative;
+  overflow: hidden;
+  min-height: 520px; 
+}
+
+.main-bg-top-intro{
+   max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Texto à esquerda */
+.main-bg-top-intro-text{
+  max-width: 520px;
+
+}
+
+/* Container da imagem ocupa o espaço restante */
+.intro-img-menina{
+  position: absolute;
+  right: 0px;                /* ajuste fino horizontal */
+  top: 50%;                   /* chave: alinha no meio vertical */
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;       /* não atrapalha cliques */
+}
+
+.intro-img-menina img{
+  width: 520px;               /* fixa o tamanho para não “encolher” */
+  max-width: 520px;
+  height: auto;
+  display: block;
 }
 
 .main-bg-top-intro-text h1{
-    font-size: 51px;
-    margin-bottom: 16px;
-    text-transform: uppercase;
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  display: block;
 }
 
-.intro-img-menina {
-    display: flex;
-    justify-content: column;
-
-}
-.intro-img-menina img {
-    max-width: 80%;
-    height: auto;
-
+.main-bg-top-intro-text p{
+  font-size: 18px;
+  line-height: 1.6;
+  color: #d0d0e0;
 }
 
 
-/* Estilo para a section INFORMAÇÕES*/
-
-.main-bg-meio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 10vh; /* Altura total da visualização */
+/* ===== PROJETOS (força o comportamento final) ===== */
+.projetos-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 260px));
+  gap: 22px;
+  justify-content: center;   /* centraliza o conjunto de cards */
 }
-.main-bg-meio-intro-text {
-    max-width: 800px; /* Defina um valor maior para max-width */
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    font-size: 15px;
-    color: var(--color-bg-meio);
-    text-align: center;
-    margin: auto; /* Centraliza o conteúdo horizontalmente */
-}
-.main-bg-meio-intro-text h1{
-    font-size: 21px;
-    margin-bottom: 16px;
-    text-transform: uppercase;
+/* ===== O QUE EU FAÇO – layout lateral ===== */
+.oqfaco-wrapper{
+  display: flex;
+  align-items: center;          /* alinha verticalmente */
+  justify-content: space-between;
+  gap: 60px;
 }
 
-/* Estilo para a section SOBRE*/
-.main-bg-fim {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    align-items: center;
-    color: var(--color-bg-fim);
-    min-height: 50vh;
+/* Texto à esquerda */
+.oqfaco-text{
+  max-width: 520px;
+  justify-content: space-between;
+  display: grid;
+  margin-bottom: 18px;   /* mais espaço antes da lista */
+  letter-spacing: 0.5px;
 }
 
-.main-bg-fim-intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* Imagem empurrada para a direita */
+.oqfaco-img{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.main-bg-fim-intro-text {
-    font-size: 15px;
+.oqfaco-img img{
+  max-width: 420px;
+  width: 100%;
 }
-
-.main-bg-fim-intro-text h1 {
-    font-size: 21px;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-}
-
-.intro-img-bsardou {
-    display: flex;
-    justify-content: center;
-}
-
-.intro-img-bsardou img {
-    max-width: 80%;
-    height: auto;
-} 
-
-/*Estilo para a seção de FOTOS*/
-
-.main-bg-gallery {
-    width: 100%;
-    max-width: 30rem;
-    max-height: 30rem;
-    overflow: hidden;
-    justify-content: center;
-    display: flex;
-    position: relative;
-}
-
-.gallery-img {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.gallery-img img {
-    width: 250px;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.gallery-img img:hover {
-    transform: translate(-3%, 3%) scale(1.2);
-}
-
-

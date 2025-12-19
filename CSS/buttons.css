@@ -96,3 +96,20 @@
     cursor: pointer;
     display: none;
 }*/
+
+.btn-primary{
+  display: inline-block;
+  margin-top: 24px;
+  padding: 12px 28px;
+  background: #6c63ff;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover{
+  background: #574fd6;
+  transform: translateY(-2px);
+}

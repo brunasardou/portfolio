@@ -43,3 +43,39 @@
     width: 100%;
     left: 0;
 }
+/* ===== MENU (corrigir itens grudados) ===== */
+.menu-about-link{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin: 0;
+  padding: 14px 0;
+}
+
+.menu-about-link li{
+  margin: 0;
+  padding: 0;
+}
+
+.menu-about-link a{
+  display: block;
+  padding: 8px 10px;
+  text-decoration: none;
+}
+/* ===== FIX: espaçamento do menu ===== */
+.menu-about ul{
+  gap: 28px;              /* separa os itens */
+  padding: 14px 0;        /* altura do menu */
+  margin: 0;              /* evita “pulos” */
+}
+
+.menu-about ul li{
+  margin: 0;
+  padding: 0;
+}
+
+.menu-about ul li a{
+  display: inline-block;
+  padding: 8px 10px;      /* área clicável + respiro */
+}

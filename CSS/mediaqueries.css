@@ -111,4 +111,68 @@
     .content-area {
         padding: 10px;
     }
+}@media (max-width: 900px){
+  .oqfaco-wrapper{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .oqfaco-img{
+    justify-content: center;
+  }
+}
+/* Responsivo */
+@media (max-width: 900px){
+  .main-bg-top-intro{
+    flex-direction: column;
+    text-align: left;
+    padding: 0 24px;
+  }
+  .intro-img-menina{
+    flex: unset;
+    width: 100%;
+    justify-content: center;
+  }
+  }
+/* ===== SOBRE (centralizar melhor o conjunto imagem+texto) ===== */
+.sobre-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* centraliza o bloco como um todo */
+  gap: 70px;
+  max-width: 1200px;        /* limita e centraliza */
+  margin: 0 auto;           /* centraliza na página */
+}
+
+/* texto */
+.sobre-text{
+  max-width: 560px;
+}
+
+/* imagem: não deixa “puxar” tudo pra esquerda */
+.sobre-img{
+  flex: 0 0 380px;          /* largura fixa elegante */
+  display: flex;
+  justify-content: center;  /* centraliza a ilustração no espaço dela */
+}
+
+.sobre-img img{
+  width: 100%;
+  max-width: 380px;
+}
+
+/* Mobile: imagem volta pro fluxo */
+@media (max-width: 900px){
+  .intro-img-menina{
+    position: static;
+    transform: none;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .intro-img-menina img{
+    width: 100%;
+    max-width: 420px;
+  }
 }
