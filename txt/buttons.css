@@ -96,30 +96,3 @@
     cursor: pointer;
     display: none;
 }*/
-
-
-.btn-destaque{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 16px 34px;
-  background: #ff4d5a;
-  color: #fff;
-
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: .6px;
-  text-decoration: none;
-
-  border: 1px solid #fff;                 /* borda branca */
-  box-shadow: 0 0 0 3px #141414;          /* moldura externa preta */
-  border-radius: 5px;
-
-  transition: transform .15s ease, filter .15s ease;
-}
-
-.btn-destaque:hover{
-  transform: translateY(-2px);
-  filter: brightness(1.05);
-}

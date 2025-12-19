@@ -1,0 +1,127 @@
+
+/* Estilo para a section WELCOME*/
+.main-bg-top{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: var(--color-bg-top);
+    align-items: center;
+    min-height: 50vh;
+}
+  
+.main-bg-top-intro-text {
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.main-bg-top-intro-text h1{
+    font-size: 51px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.intro-img-menina {
+    display: flex;
+    justify-content: column;
+
+}
+.intro-img-menina img {
+    max-width: 80%;
+    height: auto;
+
+}
+
+
+/* Estilo para a section INFORMAÇÕES*/
+
+.main-bg-meio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh; /* Altura total da visualização */
+}
+.main-bg-meio-intro-text {
+    max-width: 800px; /* Defina um valor maior para max-width */
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    font-size: 15px;
+    color: var(--color-bg-meio);
+    text-align: center;
+    margin: auto; /* Centraliza o conteúdo horizontalmente */
+}
+.main-bg-meio-intro-text h1{
+    font-size: 21px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+/* Estilo para a section SOBRE*/
+.main-bg-fim {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    align-items: center;
+    color: var(--color-bg-fim);
+    min-height: 50vh;
+}
+
+.main-bg-fim-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-bg-fim-intro-text {
+    font-size: 15px;
+}
+
+.main-bg-fim-intro-text h1 {
+    font-size: 21px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.intro-img-bsardou {
+    display: flex;
+    justify-content: center;
+}
+
+.intro-img-bsardou img {
+    max-width: 80%;
+    height: auto;
+} 
+
+/*Estilo para a seção de FOTOS*/
+
+.main-bg-gallery {
+    width: 100%;
+    max-width: 30rem;
+    max-height: 30rem;
+    overflow: hidden;
+    justify-content: center;
+    display: flex;
+    position: relative;
+}
+
+.gallery-img {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.gallery-img img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-img img:hover {
+    transform: translate(-3%, 3%) scale(1.2);
+}
+
+

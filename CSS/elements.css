@@ -1,90 +1,100 @@
-
-* {
-    margin: 0;
-    padding: 10px 20px;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+  scroll-behavior: smooth;
 }
 
-body {
-    font-family: cursive;
-    background-color: var(--about-a);
-    background-position: center center;
+body{
+  font-family: cursive;
+  background-color: var(--about-a);
+  background-position: center center;
+  background: #ffffff;
 }
 
 /* Estilos de seção unificados */
-section {
-    width: auto;
-    height: auto;
-    background-size: cover;
-    text-align:left;
-    font-size: 13px;
-    font-family: Arial, sans-serif;
+section{
+  width: 100%;
+  height: auto;
+  text-align: left;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  max-width: 1800px;   /* ajuste: 1400 / 1500 / 1600 (igual você achar melhor) */
+  margin: 0 auto;   
 }
 
-.main-bg-rodape-2 p {
-    background-image: url('../img/gif.gif');
-    font-family: sans-serif;
-    color: var(--color-p);
-    font-size: 11px;
+/* Centralização utilitária (se você usa essas classes no HTML) */
+.top, .meio, .fim, .rodape-social{
+  text-align: center;
 }
 
-.top .meio .fim .rodape-social{
-    text-align: center;
+/* ===== Layout base das seções (SEM cor fixa) ===== */
+/* IMPORTANTÍSSIMO: não force o azul aqui, senão o site fica todo azul */
+.main-bg-top,
+.main-bg-meio,
+.main-bg-meio2,
+.main-bg-fim,
+.main-bg-galeria{
+  padding: 100px 40px;
+  background-color: transparent; /* <- deixa o bg-* mandar */
 }
 
-.main-bg-top {
-    background-image: url('../img/img-principal.svg');
-    color: var(--about-a);
-    padding: 100px 40px;
+/* ===== FUNDOS (controle da imagem + cor de cada tema) ===== */
+
+/* Tema escuro (igual seu original nas seções principais) */
+.bg-principal{
+  background-image: url('../img/img-principal.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--about-a); /* azul escuro base */
+  color: var(--about-a);            /* você usa var(--about-a) no texto/links */
 }
 
-.main-bg-meio {
-    background-image: url('../img/bg-img-meio.svg');
-    background-color: var(--about-a);
-    padding: 100px 40px;
+/* Tema claro / quadriculado (igual o bloco “Fotos/Projetos”) */
+.bg-meio{
+  background-image: url('../img/bg-img-meio.svg');
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
+  background-color: #d9d9d9; /* cinza base para não ficar azul por baixo */
+  color: #111;               /* texto escuro no bloco claro */
 }
 
-.main-bg-fim {
-    background-image: url('../img/img-principal.svg');
-    color: var(--about-a);
-    padding: 100px 40px;
+/* Se quiser o quadriculado sem repetir (quase nunca precisa) */
+.bg-meio-cover{
+  background-image: url('../img/bg-img-meio.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #d9d9d9;
+  color: #111;
 }
 
-.main-bg-galeria {
-    background-image: url('../img/bg-img-meio.svg');
-    background-color: var(--about-a);
-    padding: 100px 40px;
+/* ===== Rodapés ===== */
+.main-bg-ant-rodape{
+  background-color: var(--menu-ant-rdp);
+  color: var(--about-a);
+  padding: 10px;
+  text-align: center;
 }
 
-
-
-.main-bg-ant-rodape {
-    background-color: var(--menu-ant-rdp);
-    color: var(--about-a);
-    padding: 10px;
-    text-align: center;
-  
+.main-bg-rodape-1,
+.main-bg-rodape-2,
+.main-bg-rodape-3{
+  background-color: var(--menu-color);
+  color: var(--about-a);
+  padding: 10px;
+  text-align: center;
 }
 
-
-.main-bg-rodape-1 {
-    background-color: var(--menu-color);
-    color: var(--about-a);
-    padding: 10px;
-    text-align: center;
-}
-.main-bg-rodape-2 {
-    background-color: var(--menu-color);
-    color: var(--about-a);
-    padding: 10px;
-    text-align: center;
-}
-.main-bg-rodape-3 {
-    background-color: var(--menu-color);
-    color: var(--about-a);
-    padding: 10px;
-    text-align: center;
+/* Mantive seu efeito do gif no parágrafo do rodapé 2 */
+.main-bg-rodape-2 p{
+  background-image: url('../img/gif.gif');
+  font-family: sans-serif;
+  color: var(--color-p);
+  font-size: 11px;
 }

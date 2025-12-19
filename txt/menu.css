@@ -2,7 +2,7 @@
 .menu-about {
    
     background-color: var(--menu-color);
-    padding: 0 20px;
+    padding: 0px 0px 0px 36px;
     text-align: center;
     font-family: Verdana;
     font-size: 15.5px;
@@ -18,9 +18,6 @@
     list-style-type: none;
     display: flex;
     justify-content: center;
-    gap: 28px;              /* separa os itens */
-    padding: 14px 0;        /* altura do menu */
-    margin: 0;  
 }
 
 
@@ -28,8 +25,6 @@
     text-decoration: none;
     color: var(--about-a);
     position: relative;
-    margin: 0;
-    padding: 0;
       
 }
 
@@ -48,13 +43,3 @@
     width: 100%;
     left: 0;
 }
-
-.main-bg-ant-rodape ul{
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 0;
-  padding: 18px 0;
-}
-

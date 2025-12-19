@@ -1,36 +1,35 @@
 
 /* Estilo para a section WELCOME*/
-.main-bg-top{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    color: var(--color-bg-top);
-    align-items: center;
-    min-height: 50vh;
-}
-  
-.main-bg-top-intro-text {
-    display:flex;
-    flex-flow: column;
-    justify-content: center;
-    font-size: 15px;
+.main-bg-top-intro{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-.main-bg-top-intro-text h1{
-    font-size: 51px;
-    margin-bottom: 16px;
-    text-transform: uppercase;
+.main-bg-top-intro-text{
+  max-width: 420px;  /* controla a quebra do texto */
 }
 
-.intro-img-menina {
-    display: flex;
-    justify-content: column;
-
+.main-bg-top-intro-text p{
+  line-height: 1.5;
+  margin-top: 10px;
+  margin-bottom: 18px;
 }
-.intro-img-menina img {
-    max-width: 80%;
-    height: auto;
 
+.intro-img-menina{
+  display: flex;
+  justify-content: flex-end;       /* empurra a imagem pra direita */
 }
+
+.intro-img-menina img{
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+}
+
 
 
 /* Estilo para a section INFORMAÇÕES*/
@@ -125,3 +124,225 @@
 }
 
 
+
+
+/* ===== PROJETOS (cards) ===== */
+.projetos-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.projetos-desc{
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+
+.projetos-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  overflow: visible;
+}
+
+.projeto-card{
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* efeito igual ao das fotos */
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.projeto-card:hover{
+  transform: translate(-3%, 3%) scale(1.05);
+}
+
+.projeto-card h3{
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.projeto-card p{
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.projeto-card span{
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.projeto-card a{
+  font-size: 13px;
+  font-weight: bold;
+  color: #ff4d5a;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px){
+  .projetos-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px){
+  .projetos-grid{ grid-template-columns: 1fr; }
+}
+/* ===== O QUE EU FAÇO – layout lateral ===== */
+.oqfaco-wrapper{
+  display: flex;
+  align-items: center;          /* alinha verticalmente */
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* Texto à esquerda */
+.oqfaco-text{
+  max-width: 520px;
+}
+
+/* Imagem empurrada para a direita */
+.oqfaco-img{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.oqfaco-img img{
+  max-width: 420px;
+  width: 100%;
+}
+/* ===== SOBRE (centralizar melhor o conjunto imagem+texto) ===== */
+.sobre-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* centraliza o bloco como um todo */
+  gap: 70px;
+  max-width: 1200px;        /* limita e centraliza */
+  margin: 0 auto;           /* centraliza na página */
+}
+
+/* texto */
+.sobre-text{
+  max-width: 560px;
+}
+
+/* imagem: não deixa “puxar” tudo pra esquerda */
+.sobre-img{
+  flex: 0 0 380px;          /* largura fixa elegante */
+  display: flex;
+  justify-content: center;  /* centraliza a ilustração no espaço dela */
+}
+
+.sobre-img img{
+  width: 100%;
+  max-width: 380px;
+}
+/* ===== O QUE EU FAÇO – padronizado igual “Sobre” ===== */
+.oqfaco-wrapper{
+  max-width: 1200px;
+  margin: 0 auto;                /* centraliza o conteúdo */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+/* bloco de texto */
+.oqfaco-text{
+  max-width: 560px;
+}
+
+/* imagem à direita, controlada */
+.oqfaco-img{
+  flex: 0 0 420px;               /* largura fixa elegante */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.oqfaco-img img{
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+}
+.hero-wrapper{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 60px; 
+  padding-right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-text{ 
+  max-width: 520px; 
+  line-height: 1.6;
+  opacity: .95;
+}
+.hero-img{
+  flex: 0 0 520px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-img img{
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+}
+
+.hero-text{
+  animation: fadeUp .8s ease forwards;
+  max-width: 420px;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Container padrão do site (mesmo eixo em tudo) */
+.section-wrap{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;  /* controla o “respiro” lateral */
+}
+
+/* Grid padrão: texto + imagem */
+.section-grid{
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+/* opcional: melhora leitura */
+.section-text{
+  max-width: 520px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
