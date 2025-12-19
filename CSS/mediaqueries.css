@@ -112,19 +112,3 @@
         padding: 10px;
     }
 }
-
-@media (max-width: 900px){
-  .main-bg-top-intro{
-    grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: left;
-  }
-
-  .intro-img-menina{
-    justify-content: center;
-  }
-
-  .main-bg-top{
-    padding: 70px 20px;
-  }
-}
