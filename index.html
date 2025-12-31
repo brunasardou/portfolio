@@ -1,158 +1,286 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bruna Sardou - Portfólio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Bruna Sardou — Analista de Processos e Dados (perfil híbrido). Power BI, SQL, Python, BPMN, Requisitos e Analytics." />
+  <title>Bruna Sardou | Processos & Dados</title>
 
-  <link rel="stylesheet" href="CSS/menu.css">
-  <link rel="stylesheet" href="CSS/elements.css">
-  <link rel="stylesheet" href="CSS/sections.css">
-  <link rel="stylesheet" href="CSS/buttons.css">
-  <link rel="stylesheet" href="CSS/mediaqueries.css">
-  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#inicio" aria-label="Ir para início">
+        <span class="brand__dot"></span>
+        <span class="brand__text">Bruna Sardou</span>
+      </a>
 
-<!-- MENU -->
-<div class="menu-about">
-  <nav>
-    <ul class="menu-about-link">
-      <li><a href="#top">Inicio</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#oqfaco">O que eu faço</a></li>
-      <li><a href="#projetos">Projetos</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
-</div>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#skills">Skills</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
 
-<!-- TOPO -->
-<section id="top" class="main-bg-top">
-  <div class="main-bg-top-intro">
-    <div class="main-bg-top-intro-text">
+      <div class="topbar__actions">
+        <button class="btn btn--ghost" id="themeToggle" aria-label="Alternar tema">🌙</button>
+        <button class="btn btn--ghost nav__toggle" id="navToggle" aria-label="Abrir menu">☰</button>
+      </div>
+    </div>
+  </header>
 
-      <div class="main-bg-top-intro section-text">
-        <div class="main-bg-top-intro-text">
-          <h1>WELCOME!</h1>
-          <p>Portfólio técnico com foco em automação, dados e processos, reunindo projetos pessoais e profissionais desenvolvidos em Python.</p>
+  <!-- Hero -->
+  <main id="inicio" class="hero">
+    <div class="container hero__grid">
+      <section class="hero__text">
+        <p class="eyebrow">Analista de Processos e Dados</p>
+        <h1>Transformo processos e dados em decisões claras.</h1>
+        <p class="lead">
+          Atuo na ponte entre negócio e tecnologia: levantamento de requisitos, melhoria de processos,
+          BI e analytics com <strong>Power BI</strong>, <strong>SQL</strong> e <strong>Python</strong>.
+        </p>
 
-          <div class="hero-actions">
-            <a class="btn-primary" href="#projetos">Ver projetos</a>
+        <div class="chips" aria-label="Tecnologias e áreas">
+          <span class="chip">Power BI</span>
+          <span class="chip">DAX</span>
+          <span class="chip">Power Query</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Python</span>
+          <span class="chip">BPMN</span>
+          <span class="chip">Requisitos</span>
+        </div>
+
+        <div class="links">
+          <a class="link" href="https://www.linkedin.com/in/brunasardou/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <span class="dot">•</span>
+          <a class="link" href="https://github.com/brunasardou" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </section>
+
+      <aside class="hero__card" aria-label="Resumo rápido">
+        <div class="card card--glass">
+          <div class="card__header">
+            <div class="avatar" aria-hidden="true">
+              <span>BS</span>
+            </div>
+            <div>
+              <p class="card__title">Bruna Sardou</p>
+              <p class="card__subtitle">Processos • Dados • BI</p>
+            </div>
+          </div>
+
+          <div class="card__body">
+            <ul class="bullets">
+              <li><strong>Requisitos</strong> e documentação funcional</li>
+              <li><strong>Dashboards</strong> e KPIs (Power BI)</li>
+              <li><strong>SQL/Python</strong> para análise e automação</li>
+              <li><strong>Processos</strong> e melhoria contínua (BPMN)</li>
+            </ul>
+
+            <div class="card__actions">
+              <a class="btn btn--ghost btn--full" href="#contato" title="Solicitar CV">
+                Solicitar CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Sobre -->
+  <section id="sobre" class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>Sobre</h2>
+        <p class="muted">
+        </p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card">
+          <h3>O que eu faço</h3>
+          <p>
+            Atuo no ciclo completo: entender a necessidade, mapear processos (AS IS / TO BE),
+            definir regras de negócio, apoiar times técnicos, validar entregas e transformar dados
+            em indicadores acionáveis para tomada de decisão.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Como eu entrego valor</h3>
+          <p>
+            Priorizo clareza e impacto: métricas bem definidas, dashboards limpos, documentação objetiva,
+            e alinhamento entre stakeholders. Tudo com foco em reduzir ruído, retrabalho e aumentar previsibilidade.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Skills</h2>
+        <p class="muted"></p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card">
+          <h3>Dados & BI</h3>
+          <ul class="list">
+            <li>Power BI (Dashboards, KPIs, Storytelling)</li>
+            <li>DAX (medidas e métricas)</li>
+            <li>Power Query (ETL e tratamentos)</li>
+            <li>Modelagem (conceitos e relacionamento)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Processos & Produto</h3>
+          <ul class="list">
+            <li>Levantamento e análise de requisitos</li>
+            <li>Regras de negócio e critérios de aceite</li>
+            <li>BPMN (AS IS / TO BE)</li>
+            <li>Documentação funcional</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Tecnologia & Qualidade</h3>
+          <ul class="list">
+            <li>SQL (consultas e análise)</li>
+            <li>Python (automação e análise)</li>
+            <li>Testes funcionais / QA</li>
+            <li>Agile / Scrum / Jira</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos -->
+  <section id="projetos" class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>Projetos</h2>
+        <p class="muted">Evidência prática do que eu faço — com dados fictícios quando necessário.</p>
+      </div>
+
+      <div class="projects">
+        <!-- Projeto 1 -->
+        <article class="project card">
+          <div class="project__media">
+            <img
+              src="assets/img/dashboard_indicadores_operacionais.png"
+              alt="Dashboard de Indicadores Operacionais (Power BI)"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="project__content">
+            <div class="project__top">
+              <h3>Dashboard de Indicadores Operacionais</h3>
+              <span class="badge">Power BI</span>
+            </div>
+
+            <p class="project__desc">
+              Projeto conceitual (dados fictícios) para monitoramento de demandas operacionais,
+              SLA e tempo médio de resolução. Modelagem, medidas em DAX e controle de atualização via Power Query.
+            </p>
+
+            <ul class="project__meta">
+              <li><strong>KPIs:</strong> Total, SLA (%), Tempo médio, Status, Tipo, Tendência mensal</li>
+              <li><strong>Técnicas:</strong> DAX, Power Query, UX de filtros, calendário</li>
+            </ul>
+
+            <div class="project__actions">
+              <!-- Troque pelo link do repositório quando subir -->
+              <a class="btn btn--primary" href="#" aria-disabled="true" title="Adicione o link do repo do dashboard">
+                Ver no GitHub
+              </a>
+              <a class="btn btn--soft" href="#contato">Quero algo assim</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projeto 2 (placeholder) -->
+        <article class="project card project--placeholder">
+          <div class="project__content">
+            <div class="project__top">
+              <h3>Próximo projeto</h3>
+              <span class="badge badge--muted">Em construção</span>
+            </div>
+            <p class="project__desc">
+              Aqui entra seu próximo case: análise em Python (Pandas) ou um dashboard com modelagem mais avançada.
+            </p>
+            <ul class="project__meta">
+              <li><strong>Ideias:</strong> pipeline simples, análise exploratória, ETL</li>
+              <li><strong>Foco:</strong> raciocínio + organização</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Contato</h2>
+        <p class="muted">Se quiser trocar ideia sobre BI, processos, dados ou oportunidades, me chama.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card">
+          <h3>Links</h3>
+          <div class="contact">
+            <a class="btn btn--primary btn--full" href="https://www.linkedin.com/in/brunasardou/" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            <a class="btn btn--ghost btn--full" href="https://github.com/brunasardou" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+          </div>
+          <p class="small">
+            E-mail: brunasardou@gmail.com
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Resumo rápido</h3>
+          <p class="muted">
+            Perfil híbrido com foco em alinhamento de negócio + delivery técnico.
+            Experiência em processos, requisitos, BI e análise de dados.
+          </p>
+          <div class="mini">
+            <div class="mini__item">
+              <span class="mini__label">Foco</span>
+              <span class="mini__value">Processos • BI • Analytics</span>
+            </div>
+            <div class="mini__item">
+              <span class="mini__label">Ferramentas</span>
+              <span class="mini__value">Power BI • SQL • Python</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="intro-img-menina">
-        <img src="img/proud-coder.svg" alt="uma menina sentada">
-      </div>
-
+      <footer class="footer">
+        <p class="small">© <span id="year"></span> Bruna Sardou — Portfólio profissional</p>
+      </footer>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<!-- SOBRE -->
-<section id="sobre" class="main-bg-meio bg-meio">
-  <div class="sobre-wrapper">
-    <div class="sobre-img">
-      <img src="img/girl-avatar.svg" alt="Ilustração">
-    </div>
-
-  <div class="main-bg-fim-intro">
-    <div class="main-bg-fim-intro-text">
-      <h1>BRUNA SARDOU</h1>
-      <p>
-        Sou analista de processos com forte atuação em dados e automação.
-        Atuo na ponte entre negócio e tecnologia, transformando demandas
-        em soluções práticas por meio de mapeamento de processos,
-        análise de dados e desenvolvimento de ferramentas.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- O QUE EU FAÇO -->
-<section id="oqfaco" class="main-bg-meio2 bg-principal">
-
-  <div class="oqfaco-wrapper">
-
-    <div class="oqfaco-text">
-      <h1>O QUE EU FAÇO</h1>
-      <p>- Automação de rotinas e criação de sistemas em Python</p>
-      <p>- Extração, organização e validação de dados</p>
-      <p>- Estruturação de processos e apoio à tomada de decisão</p>
-      <p>- Desenvolvimento de soluções simples para problemas reais</p>
-      <p>
-        Ferramentas: Python, SQL, Git, automação de dados e organização de processos.
-      </p>
-    </div>
-
-    <div class="oqfaco-img">
-      <img src="img/img-brusardou.svg" alt="Ilustração">
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PROJETOS -->
-<section id="projetos" class="main-bg-meio bg-meio">
-  <div class="projetos-container">
-    <h2>PROJETOS</h2>
-    <p class="projetos-desc">
-      Projetos técnicos desenvolvidos com foco em automação, dados e organização de processos.
-    </p>
-
-    <div class="projetos-grid">
-
-      <div class="projeto-card">
-        <h3>BeautyScheduler</h3>
-        <p>Sistema em Python para cadastro e organização de atendimentos em salão/manicure.</p>
-        <span>Python</span>
-        <a href="#">Ver projeto</a>
-      </div>
-
-      <div class="projeto-card">
-        <h3>Extração de Dados</h3>
-        <p>Ferramenta em Python para extração e consolidação de dados.</p>
-        <span>Python • SQL</span>
-        <a href="#">Ver projeto</a>
-      </div>
-
-      <div class="projeto-card">
-        <h3>Matria</h3>
-        <p>Website colaborativo para mulheres compartilharem conhecimentos.</p>
-        <span>HTML • CSS • JS</span>
-        <a href="#">Ver projeto</a>
-      </div>
-
-      <div class="projeto-card">
-        <h3>Controle de Estudos</h3>
-        <p>Sistema em Python para organização e acompanhamento de estudos.</p>
-        <span>Python</span>
-        <a href="#">Ver projeto</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- CONTATO -->
-<section id="contato" class="main-bg-ant-rodape">
-  <ul>
-    <li><a href="https://github.com/brunasardou" target="_blank">GitHub</a></li>
-    <li><a href="https://www.linkedin.com/in/brunasardou/" target="_blank">LinkedIn</a></li>
-    <li><a href="mailto:brunasardou@gmail.com?subject=Contato%20via%20Portfólio">E-mail</a></li>
-  </ul>
-</section>
-
-<!-- RODAPÉ -->
-<section class="main-bg-rodape-2">
-  <p>© 2025 - BRUNA SARDOU</p>
-</section>
-
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
