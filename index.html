@@ -86,8 +86,9 @@
             </ul>
 
             <div class="card__actions">
-              <a class="btn btn--ghost btn--full" href="#contato" title="Baixar CV">
-                Baixar CV (PDF)
+              <!-- Se você ainda não tem PDF, deixa como "Solicitar CV" e linka pro contato -->
+              <a class="btn btn--ghost btn--full" href="#contato" title="Solicitar CV">
+                Solicitar CV
               </a>
             </div>
           </div>
@@ -169,83 +170,106 @@
     </div>
   </section>
 
-  <!-- Projetos -->
+  <!-- Projetos (V2) -->
   <section id="projetos" class="section">
     <div class="container">
       <div class="section__head">
         <h2>Projetos</h2>
-        <p class="muted">Evidência prática de atuação — com dados fictícios quando necessário.</p>
+        <p class="muted">Cases demonstrativos com dados fictícios quando necessário — foco em cenário real e reprodutibilidade.</p>
       </div>
 
-      <div class="projects">
+      <div class="projects-v2">
         <!-- Projeto 1 -->
-        <article class="project card">
-          <div class="project__media">
+        <article class="p2 card">
+          <button
+            class="p2__media"
+            type="button"
+            data-preview="assets/img/dashboard_indicadores_operacionais.png"
+            data-title="Dashboard de Indicadores Operacionais Internos"
+            aria-label="Abrir imagem do dashboard"
+          >
             <img
               src="assets/img/dashboard_indicadores_operacionais.png"
-              alt="Dashboard de Indicadores Operacionais Internos"
+              alt="Dashboard de Indicadores Operacionais Internos (Power BI)"
               loading="lazy"
             />
-          </div>
+            <span class="p2__zoom">Clique para ampliar</span>
+          </button>
 
-          <div class="project__content">
-            <div class="project__top">
-              <h3>Dashboard de Indicadores Operacionais Internos</h3>
+          <div class="p2__body">
+            <div class="p2__top">
+              <h3 class="p2__title">Dashboard de Indicadores Operacionais Internos</h3>
               <span class="badge">Power BI</span>
             </div>
 
-            <p class="project__desc">
-              Projeto demonstrativo com dados fictícios, focado em simular um cenário real
-              de monitoramento operacional interno, com indicadores de desempenho,
-              SLA e acompanhamento de demandas.
+            <p class="p2__desc">
+              Monitoramento operacional com indicadores de volume, SLA, tempo médio de resolução e tendência mensal.
+              Modelagem, medidas em DAX e tratamento no Power Query.
             </p>
 
-            <ul class="project__meta">
-              <li><strong>KPIs:</strong> volume de demandas, SLA (%), tempo médio de resolução,
-                status operacional, tipificação e tendência mensal</li>
-              <li><strong>Técnicas:</strong> DAX, Power Query, UX de filtros, calendário</li>
+            <div class="p2__chips" aria-label="Stack do projeto">
+              <span class="chip chip--soft">Power BI</span>
+              <span class="chip chip--soft">DAX</span>
+              <span class="chip chip--soft">Power Query</span>
+            </div>
+
+            <ul class="p2__meta">
+              <li><strong>Entrega:</strong> painel executivo com filtros e visão por status/tipo</li>
+              <li><strong>Impacto:</strong> acompanhamento rápido de performance e gargalos</li>
             </ul>
 
-            <div class="project__actions">
-              <button class="btn btn--primary" disabled>Repositório em breve</button>
-              <a class="btn btn--soft" href="#contato">Quero algo assim</a>
+            <div class="p2__actions">
+              <button class="btn btn--soft p2__preview" type="button"
+                data-preview="assets/img/dashboard_indicadores_operacionais.png"
+                data-title="Dashboard de Indicadores Operacionais Internos">
+                Ver imagem
+              </button>
+
+              <button class="btn btn--primary" disabled title="Opcional: suba o PBIX ou prints no GitHub">
+                Repositório em breve
+              </button>
             </div>
           </div>
         </article>
 
         <!-- Projeto 2 -->
-        <article class="project card">
-        <div class="project__content">
-          <div class="project__top">
-            <h3>Ferramenta de Extração de Dados para BI</h3>
-            <span class="badge">Python • SQL • BI</span>
+        <article class="p2 card">
+          <div class="p2__body">
+            <div class="p2__top">
+              <h3 class="p2__title">Ferramenta de Extração de Dados para BI</h3>
+              <span class="badge">Python • SQL</span>
+            </div>
+
+            <p class="p2__desc">
+              Automação de extração de dados via SQL, aplicando padronizações e gerando CSV pronto para consumo no Power BI.
+              Exemplo público com SQLite para execução local simplificada.
+            </p>
+
+            <div class="p2__chips" aria-label="Stack do projeto">
+              <span class="chip chip--soft">Python</span>
+              <span class="chip chip--soft">SQL</span>
+              <span class="chip chip--soft">SQLite</span>
+              <span class="chip chip--soft">CSV</span>
+            </div>
+
+            <ul class="p2__meta">
+              <li><strong>Fluxo:</strong> banco → consulta SQL → CSV → Power BI</li>
+              <li><strong>Foco:</strong> automação, qualidade e reprodutibilidade</li>
+            </ul>
+
+            <div class="p2__actions">
+              <a class="btn btn--primary"
+                 href="https://github.com/brunasardou/python-extrator-dados-powerbi"
+                 target="_blank" rel="noreferrer">
+                Ver no GitHub
+              </a>
+              <a class="btn btn--soft" href="#contato">Quero algo assim</a>
+            </div>
           </div>
-
-          <p class="project__desc">
-            Ferramenta desenvolvida para automatizar a extração de dados diretamente do banco,
-            aplicando regras simples de tratamento e gerando arquivos CSV padronizados
-            para consumo no Power BI.
-            A solução reduz esforço manual, aumenta a confiabilidade dos dados
-            e facilita a atualização de dashboards operacionais.
-          </p>
-
-          <ul class="project__meta">
-            <li><strong>Foco:</strong> automação, padronização e qualidade dos dados</li>
-            <li><strong>Fluxo:</strong> banco → SQL → CSV → Power BI</li>
-          </ul>
-
-          <div class="project__actions">
-            <a
-              class="btn btn--primary"
-              href="https://github.com/brunasardou/python-extrator-dados-powerbi"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Ver no GitHub
-            </a>
-          </div>
-        </div>
-      </article>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <!-- Contato -->
   <section id="contato" class="section section--alt">
@@ -295,6 +319,14 @@
       </footer>
     </div>
   </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__content" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
+      <button class="lightbox__close" id="lightboxClose" aria-label="Fechar visualização">✕</button>
+      <img class="lightbox__img" id="lightboxImg" alt="" />
+    </div>
+  </div>
 
   <script src="assets/js/main.js"></script>
 </body>
