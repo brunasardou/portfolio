@@ -47,6 +47,10 @@
           melhoria de processos e BI operacional utilizando
           <strong>Power BI</strong>, <strong>SQL</strong> e <strong>Python</strong>.
         </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#projetos">Ver projetos</a>
+          <a class="btn btn--ghost" href="cv.html">Visualizar CV</a>
+        </div>
 
         <div class="chips" aria-label="Tecnologias e áreas">
           <span class="chip">Power BI</span>
@@ -79,17 +83,12 @@
 
           <div class="card__body">
             <ul class="bullets">
-              <li><strong>Requisitos</strong> e documentação funcional</li>
-              <li><strong>Dashboards</strong> e KPIs operacionais</li>
-              <li><strong>SQL & Python</strong> para análise e automação</li>
-              <li><strong>Processos</strong> e melhoria contínua (BPMN)</li>
+              <li>Indicadores operacionais (SLA, TMA, backlog)</li>
+              <li>Modelagem de processos (AS IS / TO BE)</li>
+              <li>Automação de dados com SQL e Python</li>
+              <li>Documentação funcional e critérios de aceite</li>
             </ul>
-
-            <div class="card__actions">
-              <!-- Se você ainda não tem PDF, deixa como "Solicitar CV" e linka pro contato -->
-              <a class="btn btn--ghost btn--full" href="#contato" title="Solicitar CV">
-                Solicitar CV
-              </a>
+            </a>
             </div>
           </div>
         </div>
@@ -114,6 +113,9 @@
           </p>
           <p class="muted">
             Experiência em ambientes complexos, atuando como ponte entre áreas técnicas e de negócio.
+          </p>
+          <p class="muted">
+            Exemplos de indicadores: SLA, TMA (tempo médio), volume por status/tipo, tendência mensal e backlog.
           </p>
         </div>
 
@@ -225,9 +227,9 @@
                 Ver imagem
               </button>
 
-              <button class="btn btn--primary" disabled title="Opcional: suba o PBIX ou prints no GitHub">
-                Repositório em breve
-              </button>
+              <a class="btn btn--primary" href="#contato" title="Peça o PBIX ou detalhes do case">
+                Solicitar detalhes
+              </a>
             </div>
           </div>
         </article>
@@ -271,54 +273,55 @@
     </div>
   </section>
 
-  <!-- Contato -->
-  <section id="contato" class="section section--alt">
-    <div class="container">
-      <div class="section__head">
-        <h2>Contato</h2>
-        <p class="muted">Vamos conversar sobre BI, processos, dados ou oportunidades.</p>
-      </div>
-
-      <div class="grid grid--2">
-        <div class="card">
-          <h3>Links</h3>
-          <div class="contact">
-            <a class="btn btn--primary btn--full" href="https://www.linkedin.com/in/brunasardou/" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <a class="btn btn--ghost btn--full" href="https://github.com/brunasardou" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-          </div>
-          <p class="small">
-            E-mail: brunasardou@gmail.com
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Resumo rápido</h3>
-          <p class="muted">
-            Perfil híbrido com foco em alinhamento de negócio e delivery técnico.
-            Atuação em processos, requisitos, BI e análise de dados.
-          </p>
-          <div class="mini">
-            <div class="mini__item">
-              <span class="mini__label">Foco</span>
-              <span class="mini__value">Processos • BI • Analytics</span>
-            </div>
-            <div class="mini__item">
-              <span class="mini__label">Ferramentas</span>
-              <span class="mini__value">Power BI • SQL • Python</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <footer class="footer">
-        <p class="small">© <span id="year"></span> Bruna Sardou — Portfólio profissional</p>
-      </footer>
+<!-- Contato -->
+<section id="contato" class="section section--alt">
+  <div class="container">
+    <div class="section__head">
+      <h2>Contato</h2>
+      <p class="muted">Vamos conversar sobre BI, processos, dados ou oportunidades.</p>
     </div>
-  </section>
+
+    <div class="contact-v2">
+      <div class="card contact-v2__card">
+        <div class="contact-v2__head">
+          <h3>Fale comigo</h3>
+          <p class="muted">Entre em contato por e-mail para propostas e oportunidades.</p>
+        </div>
+
+        <div class="contact-v2__actions">
+          <a class="btn btn--primary btn--full" href="https://www.linkedin.com/in/brunasardou/" target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+
+          <a class="btn btn--ghost btn--full" href="https://github.com/brunasardou" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+
+          <a class="btn btn--ghost btn--full" href="mailto:brunasardou@gmail.com">
+            brunasardou@gmail.com
+          </a>
+
+          <button class="btn btn--soft btn--full" type="button" id="copyEmail">
+            Copiar e-mail
+          </button>
+
+          <p class="small contact-v2__hint" id="copyHint" aria-live="polite"></p>
+        </div>
+
+        <div class="contact-v2__highlights" aria-label="Destaques rápidos">
+          <span class="pill">BI operacional (SLA • TMA • backlog)</span>
+          <span class="pill">Requisitos + BPMN (AS IS / TO BE)</span>
+          <span class="pill">SQL + Python (automação e dados)</span>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer footer--clean">
+      <p class="small">© <span id="year"></span> Bruna Sardou — Portfólio profissional</p>
+    </footer>
+  </div>
+</section>
+
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" aria-hidden="true">

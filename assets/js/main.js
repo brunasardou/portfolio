@@ -84,3 +84,22 @@ toggleThemeBtn?.addEventListener("click", () => {
     }
   });
 })();
+// Copiar e-mail
+(function () {
+  const btn = document.getElementById("copyEmail");
+  const hint = document.getElementById("copyHint");
+  const email = "brunasardou@gmail.com";
+
+  if (!btn) return;
+
+  btn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      if (hint) hint.textContent = "E-mail copiado ✅";
+      setTimeout(() => { if (hint) hint.textContent = ""; }, 2000);
+    } catch {
+      if (hint) hint.textContent = "Não deu pra copiar — copie manualmente.";
+      setTimeout(() => { if (hint) hint.textContent = ""; }, 2500);
+    }
+  });
+})();
