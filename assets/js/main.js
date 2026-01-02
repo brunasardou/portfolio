@@ -251,3 +251,106 @@ toggleThemeBtn?.addEventListener("click", () => {
     if (e.key === 'Escape' && viewer.classList.contains('is-open')) closeViewer();
   });
 })();
+document.addEventListener("DOMContentLoaded", () => {
+  const galleryWrap = document.querySelector("[data-p3-gallery]");
+  if (!galleryWrap) return;
+
+  // Viewer elements (precisam existir no HTML)
+  const viewer = document.getElementById("p3Viewer");
+  const viewerTrack = document.getElementById("p3ViewerTrack");
+  const btnClose = document.getElementById("p3ViewerClose");
+  const btnPrev = document.getElementById("p3ViewerPrev");
+  const btnNext = document.getElementById("p3ViewerNext");
+
+  if (!viewer || !viewerTrack || !btnClose || !btnPrev || !btnNext) {
+    console.warn("Viewer do Projeto 3 não encontrado no HTML. (p3Viewer/p3ViewerTrack/...)");
+    return;
+  }
+
+  function getThumbs() {
+    // pega todas as imagens dentro da galeria (independente da classe)
+    return Array.from(galleryWrap.querySelectorAll("img"));
+  }
+
+  function openViewer(startIndex) {
+    const thumbs = getThumbs();
+    if (!thumbs.length) return;
+
+    viewerTrack.innerHTML = "";
+
+    thumbs.forEach((img) => {
+      const slide = document.createElement("div");
+      slide.className = "p3-viewer__slide";
+
+      const big = document.createElement("img");
+      big.className = "p3-viewer__img";
+      big.src = img.currentSrc || img.src;
+      big.alt = img.alt || "";
+
+      slide.appendChild(big);
+      viewerTrack.appendChild(slide);
+    });
+
+    viewer.classList.add("is-open");
+    viewer.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+
+    requestAnimationFrame(() => {
+      const w = viewerTrack.clientWidth;
+      viewerTrack.scrollTo({ left: startIndex * w, behavior: "instant" });
+      syncNav();
+    });
+  }
+
+  function closeViewer() {
+    viewer.classList.remove("is-open");
+    viewer.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  function step(track) {
+    return Math.min(track.clientWidth * 0.95, 900);
+  }
+
+  function currentIndex() {
+    const w = viewerTrack.clientWidth || 1;
+    return Math.round(viewerTrack.scrollLeft / w);
+  }
+
+  function syncNav() {
+    const thumbs = getThumbs();
+    const idx = currentIndex();
+    btnPrev.disabled = idx <= 0;
+    btnNext.disabled = idx >= thumbs.length - 1;
+  }
+
+  // Delegação: clique em qualquer img dentro da galeria abre
+  galleryWrap.addEventListener("click", (e) => {
+    const img = e.target.closest("img");
+    if (!img) return;
+
+    const thumbs = getThumbs();
+    const index = thumbs.indexOf(img);
+    if (index >= 0) openViewer(index);
+  });
+
+  // Cursor “lupa”
+  getThumbs().forEach((img) => (img.style.cursor = "zoom-in"));
+
+  // Viewer events
+  btnClose.addEventListener("click", closeViewer);
+  btnPrev.addEventListener("click", () => viewerTrack.scrollBy({ left: -step(viewerTrack), behavior: "smooth" }));
+  btnNext.addEventListener("click", () => viewerTrack.scrollBy({ left: step(viewerTrack), behavior: "smooth" }));
+  viewerTrack.addEventListener("scroll", syncNav, { passive: true });
+  window.addEventListener("resize", syncNav);
+
+  // clicar no fundo fecha
+  viewer.addEventListener("click", (e) => {
+    if (e.target === viewer) closeViewer();
+  });
+
+  // ESC fecha
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && viewer.classList.contains("is-open")) closeViewer();
+  });
+});
