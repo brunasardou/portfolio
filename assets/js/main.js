@@ -103,3 +103,38 @@ toggleThemeBtn?.addEventListener("click", () => {
     }
   });
 })();
+
+// Case Projeto 3 — carrossel sem modal
+
+(function () {
+  function updateNavState(track, prevBtn, nextBtn) {
+    const atStart = track.scrollLeft <= 2;
+    const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+
+    prevBtn.disabled = atStart;
+    nextBtn.disabled = atEnd;
+  }
+
+  document.querySelectorAll('[data-p3-gallery]').forEach((wrap) => {
+    const track = wrap.querySelector('.p3-gallery__track');
+    const prev = wrap.querySelector('.p3-gallery__nav--prev');
+    const next = wrap.querySelector('.p3-gallery__nav--next');
+
+    if (!track || !prev || !next) return;
+
+    const step = () => Math.min(track.clientWidth * 0.9, 640);
+
+    prev.addEventListener('click', () => {
+      track.scrollBy({ left: -step(), behavior: 'smooth' });
+    });
+
+    next.addEventListener('click', () => {
+      track.scrollBy({ left: step(), behavior: 'smooth' });
+    });
+
+    track.addEventListener('scroll', () => updateNavState(track, prev, next), { passive: true });
+    window.addEventListener('resize', () => updateNavState(track, prev, next));
+
+    updateNavState(track, prev, next);
+  });
+})();
