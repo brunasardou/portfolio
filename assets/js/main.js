@@ -138,3 +138,116 @@ toggleThemeBtn?.addEventListener("click", () => {
     updateNavState(track, prev, next);
   });
 })();
+// Case Projeto 3 — carrossel + viewer fullscreen com scroll
+(function () {
+  const galleryWrap = document.querySelector('[data-p3-gallery]');
+  if (!galleryWrap) return;
+
+  const galleryTrack = galleryWrap.querySelector('.p3-gallery__track');
+  const thumbs = Array.from(galleryWrap.querySelectorAll('.p3-gallery__media img'));
+
+  // Viewer elements
+  const viewer = document.getElementById('p3Viewer');
+  const viewerTrack = document.getElementById('p3ViewerTrack');
+  const btnClose = document.getElementById('p3ViewerClose');
+  const btnPrev = document.getElementById('p3ViewerPrev');
+  const btnNext = document.getElementById('p3ViewerNext');
+
+  function step(track) {
+    return Math.min(track.clientWidth * 0.95, 900);
+  }
+
+  function openViewer(startIndex) {
+    // monta slides uma vez por abertura (garante ficar sempre sincronizado)
+    viewerTrack.innerHTML = '';
+    thumbs.forEach((img) => {
+      const slide = document.createElement('div');
+      slide.className = 'p3-viewer__slide';
+
+      const big = document.createElement('img');
+      big.className = 'p3-viewer__img';
+      big.src = img.getAttribute('src');
+      big.alt = img.getAttribute('alt') || '';
+
+      slide.appendChild(big);
+      viewerTrack.appendChild(slide);
+    });
+
+    viewer.classList.add('is-open');
+    viewer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    // vai para o slide clicado
+    requestAnimationFrame(() => {
+      viewerTrack.scrollTo({ left: startIndex * viewerTrack.clientWidth, behavior: 'instant' });
+      syncNav();
+    });
+  }
+
+  function closeViewer() {
+    viewer.classList.remove('is-open');
+    viewer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function currentIndex() {
+    const w = viewerTrack.clientWidth;
+    return Math.round(viewerTrack.scrollLeft / w);
+  }
+
+  function syncNav() {
+    const idx = currentIndex();
+    btnPrev.disabled = idx <= 0;
+    btnNext.disabled = idx >= thumbs.length - 1;
+  }
+
+  // Clique nas imagens do carrossel abre viewer
+  thumbs.forEach((img, i) => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => openViewer(i));
+  });
+
+  // Navegação no carrossel da página (já existia)
+  const prevInline = galleryWrap.querySelector('.p3-gallery__nav--prev');
+  const nextInline = galleryWrap.querySelector('.p3-gallery__nav--next');
+
+  function updateInlineNav() {
+    const atStart = galleryTrack.scrollLeft <= 2;
+    const atEnd = galleryTrack.scrollLeft + galleryTrack.clientWidth >= galleryTrack.scrollWidth - 2;
+    prevInline.disabled = atStart;
+    nextInline.disabled = atEnd;
+  }
+
+  prevInline.addEventListener('click', () => {
+    galleryTrack.scrollBy({ left: -step(galleryTrack), behavior: 'smooth' });
+  });
+  nextInline.addEventListener('click', () => {
+    galleryTrack.scrollBy({ left: step(galleryTrack), behavior: 'smooth' });
+  });
+
+  galleryTrack.addEventListener('scroll', updateInlineNav, { passive: true });
+  window.addEventListener('resize', updateInlineNav);
+  updateInlineNav();
+
+  // Viewer events
+  btnClose.addEventListener('click', closeViewer);
+  btnPrev.addEventListener('click', () => {
+    viewerTrack.scrollBy({ left: -step(viewerTrack), behavior: 'smooth' });
+  });
+  btnNext.addEventListener('click', () => {
+    viewerTrack.scrollBy({ left: step(viewerTrack), behavior: 'smooth' });
+  });
+
+  viewerTrack.addEventListener('scroll', syncNav, { passive: true });
+  window.addEventListener('resize', syncNav);
+
+  // clicar no fundo fecha
+  viewer.addEventListener('click', (e) => {
+    if (e.target === viewer) closeViewer();
+  });
+
+  // ESC fecha
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && viewer.classList.contains('is-open')) closeViewer();
+  });
+})();
