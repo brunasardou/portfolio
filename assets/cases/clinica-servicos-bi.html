@@ -303,21 +303,21 @@
 
   <!-- JS do Projeto 3 (separado) -->
   <script src="../js/case-projeto-3.js"></script>
+    
+  <!-- Viewer FULLSCREEN (TEM que vir antes dos scripts) -->
+  <div class="p3-viewer" id="p3Viewer" aria-hidden="true">
+    <div class="p3-viewer__content" role="dialog" aria-modal="true" aria-label="Visualização de imagens">
+      <button class="p3-viewer__close" id="p3ViewerClose" aria-label="Fechar">✕</button>
 
-  <!-- Mesmo JS da index -->
-  <script src="../js/main.js"></script>
-
- <!-- Lightbox (igual ao index, para a imagem abrir) -->
- <div class="p3-viewer" id="p3Viewer" aria-hidden="true">
-  <div class="p3-viewer__content" role="dialog" aria-modal="true" aria-label="Visualização de imagens">
-    <button class="p3-viewer__close" id="p3ViewerClose" aria-label="Fechar">✕</button>
-
-    <button class="p3-viewer__nav p3-viewer__nav--prev" id="p3ViewerPrev" type="button" aria-label="Anterior">‹</button>
-    <div class="p3-viewer__track" id="p3ViewerTrack"></div>
-    <button class="p3-viewer__nav p3-viewer__nav--next" id="p3ViewerNext" type="button" aria-label="Próxima">›</button>
+      <button class="p3-viewer__nav p3-viewer__nav--prev" id="p3ViewerPrev" type="button" aria-label="Anterior">‹</button>
+      <div class="p3-viewer__track" id="p3ViewerTrack"></div>
+      <button class="p3-viewer__nav p3-viewer__nav--next" id="p3ViewerNext" type="button" aria-label="Próxima">›</button>
+    </div>
   </div>
-</div>
 
+  <!-- SCRIPTS por último -->
+  <script src="../js/case-projeto-3.js"></script>
+  <script src="../js/main.js"></script>
 
 </body>
 </html>

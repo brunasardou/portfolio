@@ -251,11 +251,21 @@ toggleThemeBtn?.addEventListener("click", () => {
     if (e.key === 'Escape' && viewer.classList.contains('is-open')) closeViewer();
   });
 })();
+
+// ==============================
+// PROJETO 3 — GALERIA + VIEWER
+// ==============================
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const galleryWrap = document.querySelector("[data-p3-gallery]");
   if (!galleryWrap) return;
 
-  // Viewer elements (precisam existir no HTML)
+  const galleryTrack = galleryWrap.querySelector(".p3-gallery__track");
+  const prevInline = galleryWrap.querySelector(".p3-gallery__nav--prev");
+  const nextInline = galleryWrap.querySelector(".p3-gallery__nav--next");
+
+  // Viewer elements
   const viewer = document.getElementById("p3Viewer");
   const viewerTrack = document.getElementById("p3ViewerTrack");
   const btnClose = document.getElementById("p3ViewerClose");
@@ -263,13 +273,40 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnNext = document.getElementById("p3ViewerNext");
 
   if (!viewer || !viewerTrack || !btnClose || !btnPrev || !btnNext) {
-    console.warn("Viewer do Projeto 3 não encontrado no HTML. (p3Viewer/p3ViewerTrack/...)");
+    console.warn("Viewer do Projeto 3 não encontrado no HTML.");
     return;
   }
 
-  function getThumbs() {
-    // pega todas as imagens dentro da galeria (independente da classe)
-    return Array.from(galleryWrap.querySelectorAll("img"));
+  const getThumbs = () => Array.from(galleryWrap.querySelectorAll(".p3-gallery__media img"));
+
+  const step = (track) => Math.min(track.clientWidth * 0.9, 640);
+
+  // ===== Carrossel inline =====
+  function updateInlineNav() {
+    if (!galleryTrack || !prevInline || !nextInline) return;
+    const atStart = galleryTrack.scrollLeft <= 2;
+    const atEnd = galleryTrack.scrollLeft + galleryTrack.clientWidth >= galleryTrack.scrollWidth - 2;
+    prevInline.disabled = atStart;
+    nextInline.disabled = atEnd;
+  }
+
+  prevInline?.addEventListener("click", () => galleryTrack.scrollBy({ left: -step(galleryTrack), behavior: "smooth" }));
+  nextInline?.addEventListener("click", () => galleryTrack.scrollBy({ left: step(galleryTrack), behavior: "smooth" }));
+  galleryTrack?.addEventListener("scroll", updateInlineNav, { passive: true });
+  window.addEventListener("resize", updateInlineNav);
+  updateInlineNav();
+
+  // ===== Viewer fullscreen =====
+  function currentIndex() {
+    const w = viewerTrack.clientWidth || 1;
+    return Math.round(viewerTrack.scrollLeft / w);
+  }
+
+  function syncNav() {
+    const thumbs = getThumbs();
+    const idx = currentIndex();
+    btnPrev.disabled = idx <= 0;
+    btnNext.disabled = idx >= thumbs.length - 1;
   }
 
   function openViewer(startIndex) {
@@ -308,25 +345,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "";
   }
 
-  function step(track) {
-    return Math.min(track.clientWidth * 0.95, 900);
-  }
-
-  function currentIndex() {
-    const w = viewerTrack.clientWidth || 1;
-    return Math.round(viewerTrack.scrollLeft / w);
-  }
-
-  function syncNav() {
-    const thumbs = getThumbs();
-    const idx = currentIndex();
-    btnPrev.disabled = idx <= 0;
-    btnNext.disabled = idx >= thumbs.length - 1;
-  }
-
-  // Delegação: clique em qualquer img dentro da galeria abre
+  // clique na imagem abre
   galleryWrap.addEventListener("click", (e) => {
-    const img = e.target.closest("img");
+    const img = e.target.closest(".p3-gallery__media img");
     if (!img) return;
 
     const thumbs = getThumbs();
@@ -334,17 +355,18 @@ document.addEventListener("DOMContentLoaded", () => {
     if (index >= 0) openViewer(index);
   });
 
-  // Cursor “lupa”
+  // cursor lupa
   getThumbs().forEach((img) => (img.style.cursor = "zoom-in"));
 
-  // Viewer events
+  // botões do viewer
   btnClose.addEventListener("click", closeViewer);
   btnPrev.addEventListener("click", () => viewerTrack.scrollBy({ left: -step(viewerTrack), behavior: "smooth" }));
   btnNext.addEventListener("click", () => viewerTrack.scrollBy({ left: step(viewerTrack), behavior: "smooth" }));
+
   viewerTrack.addEventListener("scroll", syncNav, { passive: true });
   window.addEventListener("resize", syncNav);
 
-  // clicar no fundo fecha
+  // clique fora fecha
   viewer.addEventListener("click", (e) => {
     if (e.target === viewer) closeViewer();
   });
