@@ -3,341 +3,78 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Case simulado de BI operacional: monitoramento de SLA, TMA e backlog no Power BI com DAX e Power Query." />
-  <title>Case | Dashboard de Indicadores Operacionais (Simulado) — Bruna Sardou</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- Mesmo CSS da index, com caminho relativo (assets/cases -> assets/css) -->
+  <title>Case | Dashboard Operacional — Bruna Sardou</title>
   <link rel="stylesheet" href="../css/style.css" />
-
-  <style>
-    /* Overrides APENAS para a página do Projeto 01 (case) */
-    .case--p1 .projects-v2 > .p2:only-child{
-      max-width: none !important;     /* remove limite que deixava estreito */
-      width: 100% !important;
-      justify-self: stretch !important;
-    }
-  </style>
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
-
-<body class="case case--p1">
-  <!-- Top bar (igual ao index) -->
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="../../index.html#inicio" aria-label="Ir para início">
-        <span class="brand__dot"></span>
-        <span class="brand__text">Bruna Sardou</span>
-      </a>
-
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="../../index.html#sobre">Sobre</a>
-        <a href="../../index.html#projetos">Projetos</a>
-        <a href="../../cv.html">CV</a>
-        <a href="../../index.html#contato">Contato</a>
-      </nav>
-
-      <div class="topbar__actions">
-        <button class="btn btn--ghost" id="themeToggle" aria-label="Alternar tema">🌙</button>
-        <button class="btn btn--ghost nav__toggle" id="navToggle" aria-label="Abrir menu">☰</button>
-      </div>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../../index.html" style="font-weight:800; text-decoration:none; color:var(--text); font-size:18px;">BRUNA SARDOU</a>
+      <nav><a href="../../index.html#projetos" class="btn btn-ghost" style="border:none; font-size:14px;">← Voltar</a></nav>
     </div>
   </header>
 
-  <!-- Hero do Case (usa a mesma vibe do hero, mas em section) -->
-  <main id="inicio" class="hero">
-    <div class="container hero__grid">
-      <section class="hero__text">
-        <p class="eyebrow">Case (portfólio) • Dados fictícios</p>
-        <h1>Dashboard de Indicadores Operacionais Internos</h1>
-
-        <p class="lead">
-          Case <strong>simulado</strong> de BI operacional para monitorar <strong>volume</strong>, <strong>SLA</strong>,
-          <strong>tempo médio</strong> (TMA/TMR) e <strong>backlog</strong>, com visão executiva + recortes por <strong>status</strong> e <strong>tipo</strong>.
-        </p>
-
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="../../index.html#contato" title="Entre em contato para detalhes do case">
-            Solicitar detalhes
-          </a>
-          <a class="btn btn--ghost" href="../../index.html#projetos">
-            Voltar aos projetos
-          </a>
-        </div>
-
-        <div class="chips" aria-label="Tecnologias e áreas">
-          <span class="chip">Power BI</span>
-          <span class="chip">DAX</span>
-          <span class="chip">Power Query</span>
-          <span class="chip">Modelagem</span>
-          <span class="chip">KPIs operacionais</span>
-          <span class="chip">SLA • TMA • Backlog</span>
-        </div>
-
-        <p class="muted" style="margin-top: 12px;">
-          ⚠️ Este é um case demonstrativo para portfólio, sem vínculo com empresa/cliente real.
-        </p>
-
-        <div class="links">
-          <a class="link" href="https://www.linkedin.com/in/brunasardou/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <span class="dot">•</span>
-          <a class="link" href="https://github.com/brunasardou" target="_blank" rel="noreferrer">GitHub</a>
-        </div>
-      </section>
-
-      <aside class="hero__card" aria-label="Resumo do case">
-        <div class="card card--glass">
-          <div class="card__header">
-            <div>
-              <p class="card__title">Resumo rápido</p>
-              <p class="card__subtitle">o que foi feito e por quê</p>
-            </div>
-          </div>
-
-          <div class="card__body">
-            <ul class="bullets">
-              <li><strong>Problema:</strong> baixa visibilidade de performance e gargalos</li>
-              <li><strong>Objetivo:</strong> centralizar KPIs e acelerar decisões</li>
-              <li><strong>Solução:</strong> painel executivo + detalhamento operacional</li>
-              <li><strong>Entregas:</strong> DAX, ETL (Power Query), filtros e visões</li>
-            </ul>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </main>
-
-  <!-- Conteúdo do case -->
-  <section class="section" id="case">
-    <div class="container">
-      <div class="section__head">
-        <h2>Visão geral</h2>
-        <p class="muted">
-          Estrutura de case completa: contexto, objetivo, abordagem, solução e resultados esperados (por ser simulado).
-        </p>
-      </div>
-
-      <div class="grid grid--2">
-        <div class="card">
-          <h3>Contexto e problema</h3>
-          <p>
-            Em operações de chamados, a informação costuma ficar fragmentada: relatórios soltos, consultas manuais
-            e dificuldade de responder rápido perguntas como: “estamos estourando SLA?”,
-            “qual fila está mais carregada?” e “o backlog está aumentando?”.
-          </p>
-          <p class="muted">
-            A proposta do painel é trazer uma leitura única, confiável e acionável para gestão e rotina operacional.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Objetivo</h3>
-          <ul class="list">
-            <li>Monitorar <strong>volume</strong> (abertos/fechados) e comportamento ao longo do tempo</li>
-            <li>Acompanhar <strong>SLA</strong> (dentro/fora) e pontos de atenção</li>
-            <li>Medir <strong>tempo médio</strong> (ex.: abertura → resolução) e tendências</li>
-            <li>Identificar <strong>backlog</strong> por status/tipo e apoiar priorização</li>
-          </ul>
+  <main class="container" style="padding: 80px 24px;">
+    <section class="hero__grid">
+      <div class="hero__text">
+        <span class="badge">BI & KPIs Operacionais</span>
+        <h1>Monitoramento de SLAs Operacionais</h1>
+        <p class="lead">Desenvolvimento de um ecossistema de monitoramento para suporte técnico. O desafio era centralizar dados brutos do banco GLPI para controlar SLAs, TMA e o volume de backlog em tempo real.</p>
+        <div style="display:flex; gap:12px; margin-top:32px;">
+          <a href="https://github.com/brunasardou" target="_blank" class="btn btn-primary">Ver no GitHub</a>
         </div>
       </div>
+    </section>
 
-      <div class="grid grid--2" style="margin-top: 18px;">
-        <div class="card">
-          <h3>Meu papel (responsabilidades)</h3>
-          <ul class="list">
-            <li>Definição dos KPIs e perguntas-chave (visão executiva + operacional)</li>
-            <li>Tratamento/ETL no Power Query (padronização, tipos, datas, consistência)</li>
-            <li>Modelagem para análise temporal (tabela calendário e relacionamentos)</li>
-            <li>Criação de medidas em DAX (SLA, tempos médios, contagens e variações)</li>
-            <li>Organização do dashboard (navegação, filtros e leitura rápida)</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Escopo (o que o painel cobre)</h3>
-          <ul class="list">
-            <li>KPIs: volume, SLA, tempo médio e backlog</li>
-            <li>Recortes: período, status, tipo e categorias (exemplo)</li>
-            <li>Visão executiva: indicadores + tendência</li>
-            <li>Visão operacional: detalhamento e investigação (drill-down)</li>
-          </ul>
-          <p class="muted" style="margin-top: 10px;">
-            Como é demonstrativo, os nomes e dados podem ser ajustados para qualquer cenário operacional.
-          </p>
-        </div>
+    <section style="margin-top: 60px;">
+      <div class="card" style="padding: 0; overflow: hidden; border-radius: 24px; cursor: zoom-in; margin-bottom: 40px;">
+        <img src="../img/Proj01/pagina01.png" class="img-zoomable" style="width:100%; display:block;">
       </div>
-    </div>
-  </section>
-
-  <!-- Abordagem -->
-  <section class="section section--alt" id="abordagem">
-    <div class="container">
-      <div class="section__head">
-        <h2>Abordagem</h2>
-        <p class="muted">Como a solução foi estruturada para ser clara, consistente e reprodutível.</p>
-      </div>
-
-      <div class="grid grid--3">
-        <div class="card">
-          <h3>1) Métricas</h3>
-          <ul class="list">
-            <li>Definição de KPIs e regras (ex.: SLA dentro/fora)</li>
-            <li>Padronização de conceitos: status, tipo, datas e prazos</li>
-            <li>Critérios para leitura executiva (o que importa primeiro)</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>2) ETL e modelagem</h3>
-          <ul class="list">
-            <li>Tratamentos no Power Query (limpeza e consistência)</li>
-            <li>Tabela calendário para análises por tempo</li>
-            <li>Relacionamentos e base pronta para DAX</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>3) Visual e navegação</h3>
-          <ul class="list">
-            <li>Layout com hierarquia: KPIs → tendências → detalhes</li>
-            <li>Filtros para recorte rápido</li>
-            <li>Visão “executiva” e visão “operação” (menos ruído)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Solução + imagem -->
-  <section class="section" id="solucao">
-    <div class="container">
-      <div class="section__head">
-        <h2>Solução entregue</h2>
-        <p class="muted">Painel com visão executiva e investigação operacional (case simulado).</p>
-      </div>
-
-      <div class="projects-v2">
-        <article class="p2 card">
-          <button
-            class="p2__media"
-            type="button"
-            data-preview="../img/Proj01/pagina01.png"
-            data-title="Dashboard de Indicadores Operacionais Internos (Case)"
-            aria-label="Abrir imagem do dashboard"
-          >
-            <img
-              src="../img/Proj01/pagina01.png"
-              alt="Dashboard de Indicadores Operacionais Internos (Power BI) - Case"
-              loading="lazy"
-            />
-            <span class="p2__zoom">Clique para ampliar</span>
-          </button>
-
-          <div class="p2__body">
-            <div class="p2__top">
-              <h3 class="p2__title">Dashboard — Indicadores Operacionais</h3>
-              <span class="badge">Power BI</span>
-            </div>
-
-            <p class="p2__desc">
-              Painel com monitoramento de volume, SLA, tempo médio e backlog, com filtros para leitura rápida e
-              visão por status/tipo. Construído com modelagem, medidas em DAX e tratamentos no Power Query.
-            </p>
-
-            <div class="p2__chips" aria-label="Stack do case">
-              <span class="chip chip--soft">Power BI</span>
-              <span class="chip chip--soft">DAX</span>
-              <span class="chip chip--soft">Power Query</span>
-            </div>
-
-            <ul class="p2__meta">
-              <li><strong>Entrega:</strong> visão executiva + detalhamento operacional</li>
-              <li><strong>Foco:</strong> leitura rápida, consistência e reprodutibilidade</li>
-            </ul>
-
-            <div class="p2__actions">
-              <button class="btn btn--soft p2__preview" type="button"
-                data-preview="../img/Proj01/pagina01.png"
-                data-title="Dashboard de Indicadores Operacionais Internos (Case)">
-                Ver imagem
-              </button>
-
-              <a class="btn btn--primary" href="https://github.com/brunasardou/dashboard-indicadores-operacionais-case">
-                Ver repositorio
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="grid grid--2" style="margin-top: 18px;">
-        <div class="card">
-          <h3>Resultados esperados (por ser simulado)</h3>
-          <ul class="list">
-            <li>Redução de esforço para análise operacional (menos consultas manuais)</li>
-            <li>Melhor priorização via leitura de SLA e backlog</li>
-            <li>Clareza para identificar gargalos por status/tipo</li>
-            <li>Rotina de acompanhamento mais objetiva (gestão/operacional)</li>
-          </ul>
-          <h3>Objetivos de acompanhamento</h3>
-            <ul class="list">
-              <li>Oferecer visão consolidada do desempenho operacional</li>
-              <li>Apoiar decisões de priorização e alocação de esforço</li>
-              <li>Identificar gargalos recorrentes por status e tipo</li>
-              <li>Suportar rotinas de acompanhamento operacional</li>
-            </ul>
-        </div>
-
-        <div class="card">
-          <h3>Stack</h3>
-          <ul class="list">
-            <li><strong>Power BI:</strong> construção do dashboard e publicação</li>
-            <li><strong>Power Query:</strong> ETL, padronização e tratamentos</li>
-            <li><strong>DAX:</strong> medidas para SLA, tempos médios e contagens</li>
-            <li><strong>Boas práticas:</strong> KPIs bem definidos e leitura executiva</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card" style="margin-top: 18px;">
-        <h3>Desafios e decisões</h3>
-        <ul class="list">
-          <li><strong>Consistência de dados:</strong> padronizar status/tipos para KPIs não ficarem incoerentes.</li>
-          <li><strong>Regras de SLA:</strong> definir claramente o que conta como “dentro/fora” e em quais status.</li>
-          <li><strong>UX:</strong> separar visão executiva de operacional para evitar excesso de informação.</li>
+      <div class="card" style="padding: 40px; background: var(--surface); border: 1px solid var(--border); border-radius: 24px;">
+        <h3>Destaques Técnicos</h3>
+        <ul style="line-height: 1.8; color: var(--muted); margin-top: 16px;">
+          <li><strong>Extração de Dados:</strong> Conexão direta via SQL ao banco de dados para garantir integridade.</li>
+          <li><strong>Modelagem DAX:</strong> Métricas de performance para medir a eficiência da equipe.</li>
+          <li><strong>Impacto:</strong> Redução na latência de resposta e visibilidade total sobre gargalos.</li>
         </ul>
       </div>
+    </section>
+  </main>
 
-      <div class="hero__cta" style="margin-top: 18px;">
-        <a class="btn btn--ghost" href="../../index.html#projetos">← Pagina Inicial</a>
-        <a class="btn btn--primary" href="../../index.html#contato">Entre em contato</a>
+ <footer class="footer-professional">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h4>Bruna Sardou</h4>
+          <p>Especialista em Processos e Dados. Transformando fluxos operacionais em inteligência estratégica de negócio.</p>
+        </div>
+        <nav class="footer-nav">
+          <div class="footer-nav__col">
+            <h5>Navegação</h5>
+            <ul class="footer-nav__links">
+              <li><a href="../../index.html#inicio" class="footer-nav__link">Início</a></li>
+              <li><a href="../../index.html#projetos" class="footer-nav__link">Projetos</a></li>
+              <li><a href="../../cv.html" class="footer-nav__link">Currículo Profissional</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav__col">
+            <h5>Contato Profissional</h5>
+            <ul class="footer-nav__links">
+              <li><a href="mailto:brunasardou@gmail.com" class="footer-nav__link">E-mail</a></li>
+              <li><a href="https://linkedin.com/in/brunasardou" target="_blank" class="footer-nav__link">LinkedIn</a></li>
+              <li><a href="https://github.com/brunasardou" target="_blank" class="footer-nav__link">GitHub</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Bruna Sardou • Processos & Dados</p>
+        <p>Desenvolvido com foco em performance e estratégia.</p>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- Contato (mesma seção do index, mas opcional: aqui eu deixei só o footer igual) -->
-  <section class="section section--alt">
-    <div class="container">
-      <footer class="footer footer--clean">
-        <p class="small">© <span id="year"></span> Bruna Sardou — Portfólio profissional</p>
-      </footer>
-    </div>
-  </section>
-
-  <!-- Lightbox (igual ao index, para a imagem abrir) -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox__content" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
-      <button class="lightbox__close" id="lightboxClose" aria-label="Fechar visualização">✕</button>
-      <img class="lightbox__img" id="lightboxImg" alt="" />
-    </div>
-  </div>
-
-  <!-- Mesmo JS da index (caminho relativo) -->
-  <script src="../js/main.js"></script>
-
-  
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

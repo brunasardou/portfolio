@@ -3,321 +3,104 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Case simulado de Processos + BI: AS IS/TO BE, definição de KPIs e dashboard de acompanhamento no Power BI." />
-  <title>Case | Processos + BI (AS IS / TO BE) — Bruna Sardou</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- Mesmo CSS da index, com caminho relativo (assets/cases -> assets/css) -->
+  <title>Case | Processos + BI — Bruna Sardou</title>
   <link rel="stylesheet" href="../css/style.css" />
-
-  <!-- CSS local (somente Projeto 3) -->
-  <link rel="stylesheet" href="../css/case-projeto-3.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Top bar (igual ao index) -->
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="../../index.html#inicio" aria-label="Ir para início">
-        <span class="brand__dot"></span>
-        <span class="brand__text">Bruna Sardou</span>
-      </a>
-
-      <nav class="nav" aria-label="Navegação principal" id="nav">
-        <a href="../../index.html#sobre">Sobre</a>
-        <a href="../../index.html#projetos">Projetos</a>
-        <a href="../../cv.html">CV</a>
-        <a href="../../index.html#contato">Contato</a>
-      </nav>
-
-      <div class="topbar__actions">
-        <button class="btn btn--ghost" id="themeToggle" aria-label="Alternar tema">🌙</button>
-        <button class="btn btn--ghost nav__toggle" id="navToggle" aria-label="Abrir menu">☰</button>
-      </div>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../../index.html" style="font-weight:800; text-decoration:none; color:var(--text); font-size:18px;">BRUNA SARDOU</a>
+      <nav><a href="../../index.html#projetos" class="btn btn-ghost" style="border:none; font-size:14px;">← Voltar</a></nav>
     </div>
   </header>
 
-  <!-- Hero do Case -->
-  <main id="inicio" class="hero">
-    <div class="container hero__grid">
-      <section class="hero__text">
-        <p class="eyebrow">Case (portfólio) • Processos + BI • Dados fictícios</p>
-        <h1>Case de Melhoria de Processo + KPIs + Dashboard (AS IS / TO BE)</h1>
-
+  <main class="container" style="padding: 80px 24px;">
+    <section class="hero__grid">
+      <div class="hero__text">
+        <span class="badge">BPMN • Inteligência de Negócio</span>
+        <h1 style="margin-top:12px;">Melhoria de Processos + KPIs Clínicos</h1>
         <p class="lead">
-          Case <strong>simulado</strong> de melhoria de processo com mapeamento <strong>AS IS</strong> e proposta <strong>TO BE</strong>,
-          definição de <strong>KPIs</strong> e construção de um dashboard para monitorar performance operacional e apoiar decisões.
+          Redesenho de processos e implementação de cultura de dados para gestão clínica. 
+          Este projeto uniu o mapeamento AS IS / TO BE à criação de dashboards de performance para otimizar a jornada do paciente e o fluxo de faturamento.
         </p>
-
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="../../index.html#contato" title="Entre em contato para detalhes do case">
-            Solicitar detalhes
-          </a>
-          <a class="btn btn--ghost" href="../../index.html#projetos">
-            Voltar aos projetos
-          </a>
+        <div style="display:flex; gap:12px; margin-top:32px;">
+          <a href="https://github.com/brunasardou/projeto-3-dashboard-bi" target="_blank" class="btn btn-primary">Ver Repositório</a>
+          <a href="../../index.html#contato" class="btn btn-outline">Falar sobre este Case</a>
         </div>
+      </div>
+    </section>
 
-        <div class="chips" aria-label="Tecnologias e áreas">
-          <span class="chip">BPMN</span>
-          <span class="chip">AS IS / TO BE</span>
-          <span class="chip">KPIs</span>
-          <span class="chip">Power BI</span>
-          <span class="chip">Modelagem</span>
-          <span class="chip">Gestão operacional</span>
+    <section style="margin-top: 60px;">
+      <div class="card" style="padding: 0; overflow: hidden; border-radius: 24px; cursor: zoom-in; margin-bottom: 24px;">
+        <img src="../img/Proj03/Pagina1.png" class="img-zoomable" style="width:100%; display:block;" alt="Dashboard">
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px;">
+        <img src="../img/Proj03/Pagina2.png" class="img-zoomable" style="width:100%; border-radius: 16px; cursor: zoom-in; border:1px solid var(--border);" alt="Fluxo">
+        <img src="../img/Proj03/Pagina3.png" class="img-zoomable" style="width:100%; border-radius: 16px; cursor: zoom-in; border:1px solid var(--border);" alt="Indicadores">
+      </div>
+
+      <div class="grid-projects" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div class="card" style="padding: 32px;">
+          <h3 style="font-weight: 800; margin-bottom: 12px;">Mapeamento BPMN</h3>
+          <p style="color:var(--muted);">Identificação de pontos de fricção na jornada do paciente e eliminação de etapas redundantes no faturamento.</p>
         </div>
-
-        <p class="muted" style="margin-top: 12px;">
-          ⚠️ Case demonstrativo para portfólio, sem vínculo com empresa/cliente real.
-        </p>
-
-        <div class="links">
-          <a class="link" href="https://www.linkedin.com/in/brunasardou/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <span class="dot">•</span>
-          <a class="link" href="https://github.com/brunasardou" target="_blank" rel="noreferrer">GitHub</a>
+        <div class="card" style="padding: 32px;">
+          <h3 style="font-weight: 800; margin-bottom: 12px;">Dashboards de Performance</h3>
+          <p style="color:var(--muted);">Indicadores focados em ociosidade de salas, tempo médio de espera e conversão de serviços por especialidade.</p>
         </div>
-      </section>
-
-      <aside class="hero__card" aria-label="Resumo do case">
-        <div class="card card--glass">
-          <div class="card__header">
-            <div>
-              <p class="card__title">Resumo rápido</p>
-              <p class="card__subtitle">o que foi feito e por quê</p>
-            </div>
-          </div>
-
-          <div class="card__body">
-            <ul class="bullets">
-              <li><strong>Problema:</strong> gargalos e baixa visibilidade de performance</li>
-              <li><strong>Objetivo:</strong> definir KPIs e padronizar acompanhamento</li>
-              <li><strong>Solução:</strong> AS IS/TO BE + painel de monitoramento</li>
-              <li><strong>Entregas:</strong> KPIs, modelo, visões e navegação</li>
-            </ul>
-          </div>
-        </div>
-      </aside>
-    </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Visão geral -->
-  <section class="section" id="case">
-    <div class="container">
-      <div class="section__head">
-        <h2>Visão geral</h2>
-        <p class="muted">
-          Estrutura completa: contexto, objetivos, abordagem, solução e resultados esperados (por ser simulado).
-        </p>
+  <footer class="footer-professional">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h4>Bruna Sardou</h4>
+        <p>Especialista em Processos e Dados. Transformando fluxos operacionais em inteligência estratégica de negócio.</p>
       </div>
 
-      <div class="grid grid--2">
-        <div class="card">
-          <h3>Contexto e problema</h3>
-          <p>
-            Em operações com demanda variável (ex.: atendimentos, solicitações, agendamentos),
-            é comum existir <strong>fila</strong>, <strong>retrabalho</strong>, etapas sem SLA claro e pouca previsibilidade.
-          </p>
-          <p class="muted">
-            A proposta é mapear o fluxo atual, redesenhar um TO BE realista e criar KPIs para acompanhar ganhos.
-          </p>
+      <nav class="footer-nav">
+        <div class="footer-nav__col">
+          <h5>Navegação</h5>
+            <ul class="footer-nav__links">
+              <li><a href="../../index.html#inicio" class="footer-nav__link">Início</a></li>
+              <li><a href="../../index.html#projetos" class="footer-nav__link">Projetos</a></li>
+              <li><a href="../../cv.html" class="footer-nav__link">Currículo Profissional</a></li>
+            </ul>
         </div>
-
-        <div class="card">
-          <h3>Objetivo</h3>
-          <ul class="list">
-            <li>Mapear o processo atual (<strong>AS IS</strong>) e propor melhorias (<strong>TO BE</strong>)</li>
-            <li>Definir KPIs acionáveis (tempo, volume, capacidade, gargalos)</li>
-            <li>Construir dashboard com visão executiva e operacional</li>
-            <li>Padronizar leitura e rotina de acompanhamento</li>
+        
+        <div class="footer-nav__col">
+          <h5>Contato Profissional</h5>
+          <ul class="footer-nav__links">
+            <li><a href="mailto:brunasardou@gmail.com" class="footer-nav__link">brunasardou@gmail.com</a></li>
+            <li><a href="https://linkedin.com/in/brunasardou" target="_blank" class="footer-nav__link">LinkedIn</a></li>
+            <li><a href="https://github.com/brunasardou" target="_blank" class="footer-nav__link">GitHub</a></li>
           </ul>
         </div>
-      </div>
-
-      <div class="grid grid--2" style="margin-top: 18px;">
-        <div class="card">
-          <h3>Meu papel (responsabilidades)</h3>
-          <ul class="list">
-            <li>Levantamento do fluxo e definição de etapas/entradas/saídas</li>
-            <li>Modelagem do processo (BPMN) e pontos de melhoria</li>
-            <li>Definição/descrição de KPIs e regras de cálculo</li>
-            <li>Modelagem de dados e criação do dashboard no Power BI</li>
-            <li>Organização visual: hierarquia, filtros e leitura rápida</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Escopo</h3>
-          <ul class="list">
-            <li>Processo: AS IS + TO BE</li>
-            <li>KPIs: tempo de ciclo, fila, produtividade, capacidade, retrabalho</li>
-            <li>Recortes: período, etapa, responsável (exemplo)</li>
-            <li>Dashboard: visão executiva + detalhamento operacional</li>
-          </ul>
-          <p class="muted" style="margin-top: 10px;">
-            Por ser demonstrativo, o cenário pode ser ajustado para diferentes operações.
-          </p>
-        </div>
-      </div>
+      </nav>
     </div>
-  </section>
 
-  <!-- Abordagem -->
-  <section class="section section--alt" id="abordagem">
-    <div class="container">
-      <div class="section__head">
-        <h2>Abordagem</h2>
-        <p class="muted">Como a solução foi estruturada para ser clara, consistente e reprodutível.</p>
-      </div>
-
-      <div class="grid grid--3">
-        <div class="card">
-          <h3>1) Processo</h3>
-          <ul class="list">
-            <li>Mapeamento AS IS (etapas, entradas, esperas)</li>
-            <li>Identificação de gargalos e retrabalho</li>
-            <li>Proposta TO BE (padrões, regras e responsabilidades)</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>2) Indicadores</h3>
-          <ul class="list">
-            <li>KPIs ligados à decisão (não só “número bonito”)</li>
-            <li>Regras e definições (o que conta e quando)</li>
-            <li>Hierarquia executiva → operacional</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>3) Dashboard</h3>
-          <ul class="list">
-            <li>Modelo com dimensões e calendário</li>
-            <li>Visões e filtros para investigação</li>
-            <li>Layout com leitura rápida (KPIs → tendência → detalhes)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Solução entregue + carrossel sem modal -->
-  <section class="section" id="solucao">
-    <div class="container">
-      <div class="section__head">
-        <h2>Solução entregue</h2>
-        <p class="muted">Dashboard e artefatos de processo (case simulado).</p>
-      </div>
-
-      <!-- GALERIA (carrossel, sem modal) -->
-      <div class="card">
-        <h3>Galeria do case</h3>
-        <p class="muted">
-          Use os botões para navegar — sem abrir modal e sem precisar fechar nada.
-        </p>
-
-        <div class="p3-gallery" data-p3-gallery>
-          <button class="p3-gallery__nav p3-gallery__nav--prev" type="button" aria-label="Voltar">‹</button>
-
-          <div class="p3-gallery__track">
-            <figure class="p3-gallery__item">
-              <div class="p3-gallery__media">
-                <img src="../img/Proj03/Pagina1.png" alt="Projeto 3 — Dashboard (visão geral)" loading="lazy">
-              </div>
-              <figcaption class="p3-gallery__caption">Dashboard — visão geral</figcaption>
-            </figure>
-
-            <figure class="p3-gallery__item">
-              <div class="p3-gallery__media">
-                <img src="../img/Proj03/Pagina3.png" alt="Projeto 3 — KPIs do acompanhamento" loading="lazy">
-              </div>
-              <figcaption class="p3-gallery__caption">KPIs do acompanhamento</figcaption>
-            </figure>
-
-            <figure class="p3-gallery__item">
-              <div class="p3-gallery__media">
-                <img src="../img/Proj03/Pagina2.png" alt="Projeto 3 — Processo AS IS / TO BE" loading="lazy">
-              </div>
-              <figcaption class="p3-gallery__caption">Processo — AS IS / TO BE</figcaption>
-            </figure>
-          </div>
-
-          <button class="p3-gallery__nav p3-gallery__nav--next" type="button" aria-label="Avançar">›</button>
-        </div>
-
-        <div class="p2__actions" style="margin-top: 14px;">
-          <!-- Troque pelos seus links reais -->
-          <a class="btn btn--primary" href="https://github.com/brunasardou/projeto-3-dashboard-bi" target="_blank" rel="noreferrer">Ver repositório</a>
-          <a class="btn btn--soft" href="../../index.html#contato">Solicitar detalhes</a>
-        </div>
-      </div>
-
-      <div class="grid grid--2" style="margin-top: 18px;">
-        <div class="card">
-          <h3>Resultados esperados (por ser simulado)</h3>
-          <ul class="list">
-            <li>Mais previsibilidade e leitura rápida de gargalos</li>
-            <li>Priorização baseada em fila/capacidade e tempo de ciclo</li>
-            <li>Redução de retrabalho via padronização TO BE</li>
-            <li>Rotina de acompanhamento mais objetiva (execução e gestão)</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Stack</h3>
-          <ul class="list">
-            <li><strong>BPMN:</strong> desenho e comunicação do fluxo</li>
-            <li><strong>Power BI:</strong> dashboard e visões</li>
-            <li><strong>Modelagem:</strong> estrutura para recortes e calendário</li>
-            <li><strong>KPIs:</strong> definição e regras de leitura</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card" style="margin-top: 18px;">
-        <h3>Desafios e decisões</h3>
-        <ul class="list">
-          <li><strong>Definições:</strong> evitar KPIs ambíguos (regra clara do que conta).</li>
-          <li><strong>UX:</strong> separar visão executiva da operacional para reduzir ruído.</li>
-          <li><strong>Reprodutibilidade:</strong> case adaptável para diferentes operações.</li>
-        </ul>
-      </div>
-
-      <div class="hero__cta" style="margin-top: 18px;">
-        <a class="btn btn--ghost" href="../../index.html#projetos">← Pagina Inicial</a>
-        <a class="btn btn--primary" href="../../index.html#contato">Entre em contato</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <section class="section section--alt">
-    <div class="container">
-      <footer class="footer footer--clean">
-        <p class="small">© <span id="year"></span> Bruna Sardou — Portfólio profissional</p>
-      </footer>
-    </div>
-  </section>
-
-  <!-- JS do Projeto 3 (separado) -->
-  <script src="../js/case-projeto-3.js"></script>
-    
-  <!-- Viewer FULLSCREEN (TEM que vir antes dos scripts) -->
-  <div class="p3-viewer" id="p3Viewer" aria-hidden="true">
-    <div class="p3-viewer__content" role="dialog" aria-modal="true" aria-label="Visualização de imagens">
-      <button class="p3-viewer__close" id="p3ViewerClose" aria-label="Fechar">✕</button>
-
-      <button class="p3-viewer__nav p3-viewer__nav--prev" id="p3ViewerPrev" type="button" aria-label="Anterior">‹</button>
-      <div class="p3-viewer__track" id="p3ViewerTrack"></div>
-      <button class="p3-viewer__nav p3-viewer__nav--next" id="p3ViewerNext" type="button" aria-label="Próxima">›</button>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Bruna Sardou • Processos & Dados</p>
+      <p>Desenvolvido com foco em performance e estratégia.</p>
     </div>
   </div>
+</footer>
 
-  <!-- SCRIPTS por último -->
-  <script src="../js/case-projeto-3.js"></script>
+  <div id="lightbox" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); align-items:center; justify-content:center; cursor: zoom-out;">
+    <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border-radius:8px;">
+  </div>
   <script src="../js/main.js"></script>
-
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('.img-zoomable').forEach(img => {
+      img.addEventListener('click', () => { lightboxImg.src = img.src; lightbox.style.display = 'flex'; });
+    });
+    lightbox.addEventListener('click', () => { lightbox.style.display = 'none'; });
+  </script>
 </body>
 </html>
