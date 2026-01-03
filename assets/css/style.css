@@ -1,3 +1,6 @@
+/* Scripting por Bruna Sardou
+   Funcionalidades: Tema Dark/Light, Lightbox e Data Automática.
+*/
 /* ============================================================
    ESTILO PROFISSIONAL — BRUNA SARDOU (SÉNIOR REFINED)
 ============================================================ */
@@ -289,4 +292,27 @@ h1 {
 @media (max-width: 768px) {
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-nav { justify-content: center; gap: 30px; }
+}
+
+@media print {
+  /* Esconde o menu, o rodapé e o botão de gerar PDF */
+  .header, 
+  .footer-professional, 
+  #themeToggle, 
+  .no-print { 
+    display: none !important; 
+  }
+
+  /* Garante que o currículo ocupe a folha toda sem bordas do site */
+  .cv-container { 
+    border: none !important; 
+    box-shadow: none !important; 
+    padding: 0 !important; 
+    margin: 0 !important; 
+    background: white !important; 
+  }
+
+  body { 
+    background: white !important; 
+  }
 }

@@ -1,3 +1,5 @@
+<!--Scripting por Bruna Sardou
+Funcionalidades: Tema Dark/Light, Lightbox e Data Automática.-->
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -8,12 +10,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <div class="container header-inner">
-      <a href="../../index.html" style="font-weight:800; text-decoration:none; color:var(--text); font-size:18px;">BRUNA SARDOU</a>
-      <nav><a href="../../index.html#projetos" class="btn btn-ghost" style="border:none; font-size:14px;">← Voltar</a></nav>
-    </div>
-  </header>
+<header class="header">
+  <div class="container header-inner">
+    <a href="../../index.html" style="font-weight:800; text-decoration:none; color:var(--text); font-size:20px; letter-spacing:-0.5px;">BRUNA SARDOU</a>
+    <nav style="display:flex; gap:24px; align-items:center;">
+      <a href="../../index.html#projetos" style="text-decoration:none; font-weight:600; font-size:13px; color:var(--text);">Projetos</a>
+      <a href="#contato" class="btn btn-primary" style="padding:8px 20px;">Contato</a>
+      <button id="themeToggle" style="background:none; border:none; cursor:pointer; font-size:18px;">🌙</button>
+    </nav>
+  </div>
+</header>
 
   <main class="container" style="padding: 80px 24px;">
     <section class="hero__grid">
@@ -42,22 +48,24 @@
     </section>
   </main>
 
- <footer class="footer-professional">
+  <footer class="footer-professional">
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
           <h4>Bruna Sardou</h4>
           <p>Especialista em Processos e Dados. Transformando fluxos operacionais em inteligência estratégica de negócio.</p>
         </div>
+      <section id="contato" class="grid_contato">
         <nav class="footer-nav">
           <div class="footer-nav__col">
             <h5>Navegação</h5>
             <ul class="footer-nav__links">
               <li><a href="../../index.html#inicio" class="footer-nav__link">Início</a></li>
               <li><a href="../../index.html#projetos" class="footer-nav__link">Projetos</a></li>
-              <li><a href="../../cv.html" class="footer-nav__link">Currículo Profissional</a></li>
+              <li><a href="cv.html" class="footer-nav__link">Currículo Profissional</a></li>
             </ul>
           </div>
+        
           <div class="footer-nav__col">
             <h5>Contato Profissional</h5>
             <ul class="footer-nav__links">
@@ -65,9 +73,10 @@
               <li><a href="https://linkedin.com/in/brunasardou" target="_blank" class="footer-nav__link">LinkedIn</a></li>
               <li><a href="https://github.com/brunasardou" target="_blank" class="footer-nav__link">GitHub</a></li>
             </ul>
-          </div>
-        </nav>
-      </div>
+            </div>
+          </nav>
+        </div>
+       </section>  
       <div class="footer-bottom">
         <p>© <span id="year"></span> Bruna Sardou • Processos & Dados</p>
         <p>Desenvolvido com foco em performance e estratégia.</p>
@@ -76,5 +85,18 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Lógica para o Lightbox das imagens
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('.img-zoomable').forEach(img => {
+      img.addEventListener('click', () => { 
+        lightboxImg.src = img.src; 
+        lightbox.style.display = 'flex'; 
+      });
+    });
+    lightbox.addEventListener('click', () => { lightbox.style.display = 'none'; });
+  </script>
 </body>
 </html>
