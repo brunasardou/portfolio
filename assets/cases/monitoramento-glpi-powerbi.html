@@ -12,9 +12,19 @@
 
   <!-- Mesmo CSS da index, com caminho relativo (assets/cases -> assets/css) -->
   <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    /* Overrides APENAS para a página do Projeto 01 (case) */
+    .case--p1 .projects-v2 > .p2:only-child{
+      max-width: none !important;     /* remove limite que deixava estreito */
+      width: 100% !important;
+      justify-self: stretch !important;
+    }
+  </style>
+
 </head>
 
-<body>
+<body class="case case--p1">
   <!-- Top bar (igual ao index) -->
   <header class="topbar">
     <div class="container topbar__inner">
@@ -46,8 +56,7 @@
 
         <p class="lead">
           Case <strong>simulado</strong> de BI operacional para monitorar <strong>volume</strong>, <strong>SLA</strong>,
-          <strong>tempo médio</strong> (TMA/TMR) e <strong>backlog</strong>, com visão executiva + recortes por
-          <strong>status</strong> e <strong>tipo</strong>.
+          <strong>tempo médio</strong> (TMA/TMR) e <strong>backlog</strong>, com visão executiva + recortes por <strong>status</strong> e <strong>tipo</strong>.
         </p>
 
         <div class="hero__cta">
@@ -220,7 +229,7 @@
             aria-label="Abrir imagem do dashboard"
           >
             <img
-              src="../img/dashboard_indicadores_operacionais.png"
+              src="../img/Proj01/pagina01.png"
               alt="Dashboard de Indicadores Operacionais Internos (Power BI) - Case"
               loading="lazy"
             />
@@ -251,7 +260,7 @@
 
             <div class="p2__actions">
               <button class="btn btn--soft p2__preview" type="button"
-                data-preview="../img/dashboard_indicadores_operacionais.png"
+                data-preview="../img/Proj01/pagina01.png"
                 data-title="Dashboard de Indicadores Operacionais Internos (Case)">
                 Ver imagem
               </button>
@@ -273,9 +282,13 @@
             <li>Clareza para identificar gargalos por status/tipo</li>
             <li>Rotina de acompanhamento mais objetiva (gestão/operacional)</li>
           </ul>
-          <p class="muted">
-            Se você quiser, posso adaptar essa seção para “metas monitoradas” (sem números) ou para “métricas estimadas”.
-          </p>
+          <h3>Objetivos de acompanhamento</h3>
+            <ul class="list">
+              <li>Oferecer visão consolidada do desempenho operacional</li>
+              <li>Apoiar decisões de priorização e alocação de esforço</li>
+              <li>Identificar gargalos recorrentes por status e tipo</li>
+              <li>Suportar rotinas de acompanhamento operacional</li>
+            </ul>
         </div>
 
         <div class="card">
@@ -324,5 +337,7 @@
 
   <!-- Mesmo JS da index (caminho relativo) -->
   <script src="../js/main.js"></script>
+
+  
 </body>
 </html>

@@ -15,26 +15,19 @@
 
 <body>
   <!-- Top bar -->
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="#inicio" aria-label="Ir para início">
-        <span class="brand__dot"></span>
-        <span class="brand__text">Bruna Sardou</span>
-      </a>
+  <header class="header">
+  <div class="container header-inner">
+    <a href="#topo" class="btn btn-ghost" style="font-weight:700; border:none;">Bruna Sardou</a>
 
-      <nav class="nav" aria-label="Navegação principal">
-          <a href="#sobre">Sobre</a>
-          <a href="#projetos">Projetos</a>
-          <a href="cv.html">CV</a>
-          <a href="#contato">Contato</a>
-      </nav>
+    <nav style="display:flex; gap:10px; align-items:center;">
+      <a class="btn btn-ghost" href="#projetos">Projetos</a>
+      <a class="btn btn-ghost" href="#sobre">Sobre</a>
+      <a class="btn btn-primary" href="#contato">Entre em Contato</a>
+      <button class="btn btn-icon" id="themeToggle" type="button" aria-label="Alternar tema">🌙</button>
+    </nav>
+  </div>
+</header>
 
-      <div class="topbar__actions">
-        <button class="btn btn--ghost" id="themeToggle" aria-label="Alternar tema">🌙</button>
-        <button class="btn btn--ghost nav__toggle" id="navToggle" aria-label="Abrir menu">☰</button>
-      </div>
-    </div>
-  </header>
 
   <!-- Hero -->
   <main id="inicio" class="hero">
@@ -48,7 +41,7 @@
           <strong>Power BI</strong>, <strong>SQL</strong> e <strong>Python</strong>.
         </p>
         <div class="hero__cta">
-          <a class="btn btn--primary" href="#projetos">Ver projetos</a>
+          <a class="btn btn--primary btn--glow" href="#projetos">Ver projetos</a>
           <a class="btn btn--ghost" href="cv.html">Visualizar CV</a>
         </div>
 
@@ -170,173 +163,77 @@
   </section>
 
   <!-- Projetos (V2) -->
-<section id="projetos" class="section">
+<section class="section" id="projetos">
   <div class="container">
-    <div class="section__head">
-      <h2>Projetos</h2>
-      <p class="muted">
-        Cases demonstrativos com dados fictícios quando necessário — foco em cenário real e reprodutibilidade.
-      </p>
-    </div>
+    <h2>Projetos</h2>
+    <p class="lead">Cases de BI, processos e automação — com foco em clareza, métricas e resultado.</p>
 
-    <div class="projects-v2">
+    <div class="hr"></div>
 
-      <!-- PROJETO 01 -->
-      <article class="p2 card">
-        <button
-          class="p2__media"
-          type="button"
-          data-preview="assets/img/Proj01/pagina01.png"
-          data-title="Dashboard de Indicadores Operacionais Internos"
-          aria-label="Abrir imagem do dashboard"
-        >
-          <img
-            src="assets/img/Proj01/pagina01.png"
-            alt="Dashboard de Indicadores Operacionais Internos (Power BI)"
-            loading="lazy"
-          />
-          <span class="p2__zoom">Clique para ampliar</span>
-        </button>
-
-        <div class="p2__body">
-          <div class="p2__top">
-            <h3 class="p2__title">Dashboard de Indicadores Operacionais Internos</h3>
+    <div class="grid grid-3">
+      <article class="card">
+        <div class="card-media"><img src="assets\img\Proj01\pagina01.png" alt="Projeto 01"></div>
+        <div class="card-body">
+          <div class="kicker">Power BI • Operações</div>
+          <h3 class="title">Indicadores Operacionais</h3>
+          <p class="text">KPIs de volume, produtividade e acompanhamento diário.</p>
+          <div class="badges">
             <span class="badge">Power BI</span>
-          </div>
-
-          <p class="p2__desc">
-            Monitoramento operacional com indicadores de volume, SLA, tempo médio de resolução e tendência mensal.
-            Modelagem de dados, DAX e Power Query.
-          </p>
-
-          <div class="p2__chips">
-            <span class="chip chip--soft">Power BI</span>
-            <span class="chip chip--soft">DAX</span>
-            <span class="chip chip--soft">Power Query</span>
-          </div>
-
-          <ul class="p2__meta">
-            <li><strong>Entrega:</strong> painel executivo com filtros e visão por status/tipo</li>
-            <li><strong>Impacto:</strong> acompanhamento rápido de performance e gargalos</li>
-          </ul>
-
-          <div class="p2__actions">
-            <button class="btn btn--soft p2__preview"
-              data-preview="assets/img/Proj01/pagina01.png"
-              data-title="Dashboard de Indicadores Operacionais Internos">
-              Ver imagem
-            </button>
-
-            <a class="btn btn--primary" href="assets/cases/monitoramento-glpi-powerbi.html">
-              Ver case completo
-            </a>
+            <span class="badge">KPIs</span>
+            <span class="badge">Processos</span>
           </div>
         </div>
+        <a class="btn btn-primary" href="assets/cases/monitoramento-glpi-powerbi.html">
+          Ver projeto
+        </a>
       </article>
 
-      <!-- PROJETO 02 -->
-      <article class="p2 card">
-        <div class="p2__body">
-          <div class="p2__top">
-            <h3 class="p2__title">Ferramenta de Extração de Dados para BI</h3>
-            <span class="badge">Python • SQL</span>
-          </div>
-
-          <p class="p2__desc">
-            Sistema para automação de extração de dados via SQL, padronização e geração de CSV
-            pronto para consumo no Power BI.
-          </p>
-
-          <div class="p2__chips">
-            <span class="chip chip--soft">Python</span>
-            <span class="chip chip--soft">SQL</span>
-            <span class="chip chip--soft">SQLite</span>
-            <span class="chip chip--soft">CSV</span>
-          </div>
-
-          <ul class="p2__meta">
-            <li><strong>Fluxo:</strong> banco → consulta SQL → CSV → Power BI</li>
-            <li><strong>Foco:</strong> automação, qualidade e reprodutibilidade</li>
-          </ul>
-
-          <div class="p2__actions">
-            <a class="btn btn--primary"
-               href="https://github.com/brunasardou/python-extrator-dados-powerbi"
-               target="_blank" rel="noreferrer">
-              Ver no GitHub
-            </a>
-
-            <a class="btn btn--soft" href="#contato">
-              Quero algo assim
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- PROJETO 03 -->
-      <article class="p2 card">
-        <button
-          class="p2__media"
-          type="button"
-          data-preview="assets/img/Proj03/Pagina1.png"
-          data-title="Gestão Operacional & Qualidade — Clínica de Serviços"
-          aria-label="Abrir imagem do dashboard"
-        >
-          <img
-            src="assets/img/Proj03/Pagina1.png"
-            alt="Dashboard de Gestão Operacional e Qualidade (Power BI)"
-            loading="lazy"
-          />
-          <span class="p2__zoom">Clique para ampliar</span>
-        </button>
-
-        <div class="p2__body">
-          <div class="p2__top">
-            <h3 class="p2__title">Gestão Operacional & Qualidade — Clínica de Serviços</h3>
-            <span class="badge">Power BI</span>
-          </div>
-
-          <p class="p2__desc">
-            Dashboard com três visões (Executiva, Operacional & Produtividade, Qualidade & Experiência do Cliente),
-            utilizando dados simulados para demonstrar modelagem dimensional e storytelling analítico.
-          </p>
-
-          <div class="p2__chips">
-            <span class="chip chip--soft">Power BI</span>
-            <span class="chip chip--soft">DAX</span>
-            <span class="chip chip--soft">Modelagem</span>
-            <span class="chip chip--soft">KPIs</span>
-          </div>
-
-          <ul class="p2__meta">
-            <li><strong>Estrutura:</strong> 3 páginas analíticas</li>
-            <li><strong>Destaque:</strong> produtividade, cancelamento, satisfação e tempo médio</li>
-          </ul>
-
-          <div class="p2__actions">
-            <button class="btn btn--soft p2__preview"
-              data-preview="assets/img/Proj03/pagina1.png"
-              data-title="Gestão Operacional & Qualidade — Clínica de Serviços">
-              Ver imagem
-            </button>
-
-            <a class="btn btn--primary" href="assets/cases/clinica-servicos-bi.html">
-              Ver case completo
-            </a>
-
-            <a class="btn btn--ghost"
-               href="https://github.com/brunasardou/projeto-3-dashboard-bi"
-               target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-          </div>
-        </div>
-      </article>
-
+      <article class="card">
+  <div class="card-media placeholder">
+    <div class="ph-inner">
+      <div class="ph-icon">⚙️</div>
+      <div class="ph-title">Sistema / Software</div>
+      <div class="ph-sub">Sem demo pública</div>
     </div>
   </div>
-</section>
 
+  <div class="card-body">
+    <div class="kicker">Sistema • Visão de produto</div>
+    <h3 class="title">Projeto 02</h3>
+    <p class="text">Case conceitual (arquitetura/escopo), sem demo pública.</p>
+
+    <div class="badges">
+      <span class="badge">Requisitos</span>
+      <span class="badge">Processos</span>
+    </div>
+
+    <div class="card-actions">
+      <a class="btn btn-primary" href="https://github.com/brunasardou/python-extrator-dados-powerbi">Ver Repositório</a>
+    </div>
+  </div>
+</article>
+
+<article class="card">
+        <div class="card-media"><img src="assets\img\Proj03\Pagina1.png" alt="Projeto 03"></div>
+        <div class="card-body">
+          <div class="kicker">Processos + BI</div>
+          <h3 class="title">Dashboard de Monitoramento</h3>
+          <p class="text">Indicadores e acompanhamento operacional (case simulado).</p>
+          <div class="badges">
+            <span class="badge">BI</span>
+            <span class="badge">AS IS / TO BE</span>
+            <span class="badge">KPIs</span>
+          </div>
+        </div>
+        <a class="btn btn-primary" href="assets/cases/clinica-servicos-bi.html">
+          Ver projeto
+        </a>
+      </article>
+      <div class="card-actions">
+    </div>
+    </div>
+    </div>
+</section>
 
 <!-- Contato -->
 <section id="contato" class="section section--alt">
@@ -350,7 +247,7 @@
       <div class="card contact-v2__card">
         <div class="contact-v2__head">
           <h3>Fale comigo</h3>
-          <p class="muted">Entre em contato por e-mail para propostas e oportunidades.</p>
+          <p class="muted">Entre em contato para propostas e oportunidades.</p>
         </div>
 
         <div class="contact-v2__actions">
@@ -373,13 +270,13 @@
           <p class="small contact-v2__hint" id="copyHint" aria-live="polite"></p>
         </div>
 
-        <div class="contact-v2__highlights" aria-label="Destaques rápidos">
-          <span class="pill">BI operacional (SLA • TMA • backlog)</span>
-          <span class="pill">Requisitos + BPMN (AS IS / TO BE)</span>
-          <span class="pill">SQL + Python (automação e dados)</span>
-        </div>
-      </div>
+      <p class="skills-title">Especialidades</p>
+    <div class="skills-cards">
+      <div>BI operacional · SLA · TMA · Backlog</div>
+      <div>Requisitos · BPMN (AS IS / TO BE)</div>
+      <div>SQL · Python · Automação de dados</div>
     </div>
+
 
     <footer class="footer footer--clean">
       <p class="small">© <span id="year"></span> Bruna Sardou — Portfólio profissional</p>
@@ -396,6 +293,36 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js"></script>
+  <script>
+(function(){
+  const root = document.documentElement;
+  const btn = document.getElementById("themeToggle");
+
+  const saved = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  function setTheme(mode){
+    if(mode === "dark") root.setAttribute("data-theme","dark");
+    else root.removeAttribute("data-theme");
+
+    localStorage.setItem("theme", mode);
+    if(btn) btn.textContent = mode === "dark" ? "☀️" : "🌙";
+  }
+
+  if(saved) setTheme(saved);
+  else setTheme(prefersDark ? "dark" : "light");
+
+  if(btn){
+    btn.addEventListener("click", () => {
+      const isDark = root.getAttribute("data-theme") === "dark";
+      setTheme(isDark ? "light" : "dark");
+    });
+  }
+   //Ano do copyright
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
+})();
+</script>
+
 </body>
 </html>

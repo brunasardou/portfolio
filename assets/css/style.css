@@ -1,45 +1,259 @@
 /* =========================================
-   THEME TOKENS
+   CLEAN PREMIUM THEME (Light + Dark)
 ========================================= */
+
 :root{
-  --bg:#f7f8fb;
-  --surface:#ffffff;
-  --text:#0f172a;
-  --muted:#475569;
-  --muted2:#64748b;
-  --border:#e7eaf0;
-
-  --accent:#2F5597;
-  --accent2:#5B9BD5;
-
-  --shadow:0 10px 24px rgba(15,23,42,.08);
-  --shadow2:0 8px 18px rgba(15,23,42,.06);
-
-  --radius:16px;
-  --radius2:22px;
-  --max:1120px;
+  --container: 1120px;
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface2: rgba(255,255,255,.72);
+  --text: #0b1220;
+  --muted: rgba(11,18,32,.72);
+  --border: rgba(11,18,32,.10);
+  --accent: #4f6ef7;
+  --accent2:#7aa2ff;
+  --radius: 16px;
+  --radius2: 22px;
+  --shadow1: 0 10px 24px rgba(2,6,23,.08);
+  --shadow2: 0 18px 40px rgba(2,6,23,.10);
+  --pad: 24px;
+  --pad2: 32px;
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
 }
 
-[data-theme="dark"]{
-  --bg:#0b1220;
-  --surface:#111827;
-  --text:#e5e7eb;
-  --muted:#9ca3af;
-  --muted2:#a1a1aa;
-  --border:#1f2937;
+:root[data-theme="dark"]{
+  --bg: #070a12;
+  --surface: rgba(255,255,255,.06);
+  --surface2: rgba(255,255,255,.08);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.72);
+  --border: rgba(255,255,255,.10);
+  --shadow1: 0 10px 24px rgba(0,0,0,.35);
+  --shadow2: 0 18px 40px rgba(0,0,0,.45);
+}
 
-  --accent:#5B9BD5;
-  --accent2:#2F5597;
+*{
+  box-sizing: border-box;
+}
 
-  --shadow:0 14px 30px rgba(0,0,0,.35);
-  --shadow2:0 10px 22px rgba(0,0,0,.28);
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background: radial-gradient(900px 420px at 15% 0%, rgba(37,99,235,.10), transparent 60%),
+              radial-gradient(900px 420px at 85% 0%, rgba(29,78,216,.08), transparent 60%),
+              var(--bg);
+}
+
+a{
+  color: inherit;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+.section{
+  padding: 72px 0;
+}
+
+/* Typography */
+h1{
+  font-size: clamp(32px, 4vw, 50px);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0 0 12px;
+}
+
+h2{
+  font-size: clamp(22px, 2.4vw, 32px);
+  margin: 0 0 18px;
+  letter-spacing: -0.02em;
+}
+
+p{
+  line-height: 1.6;
+}
+
+.lead{
+  font-size: 16px;
+  color: var(--muted);
+  color:var(--muted);
+  line-height:1.75;
+}
+
+/* Header clean */
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--border);
+  background: rgba(246,247,251,.65);
+  backdrop-filter: blur(10px);
+}
+
+:root[data-theme="dark"] .header{
+  background: rgba(7,10,18,.60);
+}
+
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  box-shadow: var(--shadow1);
+  text-decoration:none;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+  box-shadow: var(--shadow2);
+}
+
+.btn-primary{
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+}
+
+.btn-ghost{
+  background: rgba(59,109,246,.08);
+  border-color: rgba(59,109,246,.25);
+  color: var(--accent);
+}
+
+.btn-icon{
+  width: 44px;
+  padding: 0;
+}
+
+.btn-primary:hover{
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 14px 34px rgba(59,109,246,.45);
+}
+
+/* Card */
+.card{
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius2);
+  box-shadow: var(--shadow1);
+  overflow: hidden;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow2);
+  border-color: rgba(37,99,235,.22);
+}
+
+.card-body{
+  padding: 18px 18px 16px;
+}
+
+.card-media{
+  aspect-ratio: 16/9;
+  background: rgba(2,6,23,.04);
+  border-bottom: 1px solid var(--border);
+}
+
+.card-media img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+
+.kicker{
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.title{
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.text{
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 8px;
+}
+
+.badge{
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(37,99,235,.07);
+}
+
+/* Grid */
+.grid{
+  display:grid;
+  gap: 22px;
+}
+
+.grid-3{
+  grid-template-columns: repeat(3, minmax(0,1fr));
+}
+
+@media (max-width: 980px){
+  .grid-3{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Divider */
+.hr{
+  height:1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+  margin: 28px 0 22px;
 }
 
 /* =========================================
    BASE
 ========================================= */
-*{box-sizing:border-box}
-html,body{height:100%}
+
+*{
+  box-sizing:border-box
+}
+
+html,body{
+  height:100%
+}
 
 body{
   margin:0;
@@ -48,8 +262,15 @@ body{
   background:var(--bg);
 }
 
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
+a{
+  text-decoration:none;
+  color:inherit
+}
+
+img{
+  max-width:100%;
+  display:block
+}
 
 .container{
   max-width:var(--max);
@@ -57,9 +278,14 @@ img{max-width:100%;display:block}
   padding:0 18px;
 }
 
+.muted{
+  opacity:.75;
+}
+
 /* =========================================
    TOPBAR / NAV
 ========================================= */
+
 .topbar{
   position:sticky;
   top:0;
@@ -84,7 +310,8 @@ img{max-width:100%;display:block}
 }
 
 .brand__dot{
-  width:12px;height:12px;
+  width:12px;
+  height:12px;
   border-radius:999px;
   background:linear-gradient(140deg,var(--accent2),var(--accent));
 }
@@ -106,16 +333,15 @@ img{max-width:100%;display:block}
   color:var(--text);
 }
 
-/* FIX: hamburger só no responsivo (força a regra) */
-#navToggle{ display:none !important; }
-@media (max-width:760px){
-  #navToggle{ display:inline-flex !important; }
+/* hamburger: desktop OFF (só aparece no responsivo) */
+.nav__toggle{
+  display:inline-flex
 }
 
-
-/* MOBILE NAV */
 @media(max-width:760px){
-  .nav{display:none}
+  .nav{
+    display:none
+  }
 
   .nav__toggle{
     display:inline-flex;
@@ -139,7 +365,10 @@ img{max-width:100%;display:block}
 /* =========================================
    HERO
 ========================================= */
-.hero{padding:56px 0 20px}
+
+.hero{
+  padding:56px 0 20px
+}
 
 .hero__grid{
   display:grid;
@@ -148,7 +377,9 @@ img{max-width:100%;display:block}
 }
 
 @media(max-width:980px){
-  .hero__grid{grid-template-columns:1fr}
+  .hero__grid{
+    grid-template-columns:1fr
+  }
 }
 
 .eyebrow{
@@ -165,12 +396,6 @@ h1{
   font-size:clamp(30px,4vw,48px);
   margin:12px 0;
   line-height:1.05;
-}
-
-.lead{
-  color:var(--muted);
-  line-height:1.75;
-  max-width:60ch;
 }
 
 .hero__cta{
@@ -200,7 +425,10 @@ h1{
 /* =========================================
    SECTIONS / CARDS
 ========================================= */
-.section{padding:64px 0}
+
+.section{
+  padding:64px 0
+}
 
 .section--alt{
   background:color-mix(in srgb,var(--surface) 70%,transparent);
@@ -208,7 +436,9 @@ h1{
   border-bottom:1px solid var(--border);
 }
 
-.section__head{margin-bottom:20px}
+.section__head{
+  margin-bottom:20px
+}
 
 .section__head h2{
   font-size:28px;
@@ -220,11 +450,19 @@ h1{
   gap:14px;
 }
 
-.grid--2{grid-template-columns:repeat(2,1fr)}
-.grid--3{grid-template-columns:repeat(3,1fr)}
+.grid--2{
+  grid-template-columns:repeat(2,1fr)
+}
+
+.grid--3{
+  grid-template-columns:repeat(3,1fr)
+}
 
 @media(max-width:980px){
-  .grid--2,.grid--3{grid-template-columns:1fr}
+  .grid--2,
+  .grid--3{
+    grid-template-columns:1fr
+  }
 }
 
 .card{
@@ -235,7 +473,9 @@ h1{
   box-shadow:var(--shadow2);
 }
 
-.card--glass{box-shadow:var(--shadow)}
+.card--glass{
+  box-shadow:var(--shadow)
+}
 
 .bullets{
   padding-left:18px;
@@ -243,41 +483,17 @@ h1{
   line-height:1.75;
 }
 
-/* =========================================
-   BUTTONS
-========================================= */
-.btn{
-  border-radius:16px;
-  padding:11px 14px;
-  font-weight:900;
-  border:1px solid transparent;
-  cursor:pointer;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-}
-
-.btn--full{width:100%}
-
-.btn--primary{
-  background:linear-gradient(140deg,var(--accent2),var(--accent));
-  color:#fff;
-}
-
-.btn--ghost{
-  background:transparent;
-  border-color:var(--border);
-}
-
-.btn--soft{
-  background:color-mix(in srgb,var(--accent) 10%,var(--surface));
-  color:var(--accent);
+.list{
+  margin:0;
+  padding-left:18px;
+  color:var(--muted);
+  line-height:1.75;
 }
 
 /* =========================================
    PROJECTS V2
 ========================================= */
+
 .projects-v2{
   display:grid;
   grid-template-columns:1fr;
@@ -285,7 +501,9 @@ h1{
 }
 
 @media(min-width:900px){
-  .projects-v2{grid-template-columns:1fr 1fr}
+  .projects-v2{
+    grid-template-columns:1fr 1fr
+  }
 }
 
 .p2{
@@ -324,11 +542,30 @@ h1{
   display:flex;
   gap:10px;
   flex-wrap:wrap;
+  align-items:center;
+}
+
+/* garante que “Ver imagem” e “Ver case completo” fiquem idênticos */
+.p2__actions .btn{
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: .2px;
+  min-height: 44px;
+  padding: 12px 16px;
+}
+
+
+/* Se o GitHub estiver fora do bloco .p2__actions (Projeto 01) */
+.p2__body > a.btn--ghost[href*="github.com"]{
+  width:100%;
+  margin-top:12px;
 }
 
 /* =========================================
    CONTACT V2
 ========================================= */
+
 .contact-v2{
   display:flex;
   justify-content:center;
@@ -342,6 +579,10 @@ h1{
 .contact-v2__actions{
   display:grid;
   gap:10px;
+}
+
+.contact-v2__actions .btn{
+  width:100%;
 }
 
 .contact-v2__highlights{
@@ -365,6 +606,7 @@ h1{
 /* =========================================
    FOOTER
 ========================================= */
+
 .footer{
   margin-top:20px;
   padding-top:14px;
@@ -373,8 +615,9 @@ h1{
 }
 
 /* =========================================
-   LIGHTBOX
+   LIGHTBOX (INDEX)
 ========================================= */
+
 .lightbox{
   position:fixed;
   inset:0;
@@ -385,7 +628,9 @@ h1{
   z-index:9999;
 }
 
-.lightbox.is-open{display:flex}
+.lightbox.is-open{
+  display:flex
+}
 
 .lightbox__content{
   position:relative;
@@ -412,75 +657,21 @@ h1{
   border:none;
   cursor:pointer;
 }
-.project-card{
-  border: 1px solid rgba(0,0,0,.08);
-  border-radius: 14px;
-  padding: 18px;
-  background: rgba(255,255,255,.75);
-  box-shadow: 0 10px 24px rgba(0,0,0,.06);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
 
-.project-card__subtitle{
-  margin-top: 6px;
-  font-size: 0.92rem;
-  opacity: .8;
-}
+/* =========================================
+   CASE PAGES (geral)
+========================================= */
 
-.project-card__desc{
-  line-height: 1.55;
-  margin: 0;
-}
-
-.project-card__tags{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.project-card__tags li{
-  font-size: .85rem;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,.08);
-  background: rgba(255,255,255,.55);
-}
-
-.project-card__actions{
-  display: flex;
-  gap: 10px;
-  margin-top: 6px;
-}
-
-.btn{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 12px;
-  border-radius: 12px;
-  text-decoration: none;
-  border: 1px solid rgba(0,0,0,.1);
-  background: #0b3a66;
-  color: #fff;
-  font-weight: 600;
-}
-
-.btn--ghost{
-  background: transparent;
-  color: #0b3a66;
-}
 .project-hero{
   max-width: 1100px;
   margin: 24px auto;
   padding: 0 16px;
 }
-.back-link{ text-decoration:none; opacity:.8; }
-.muted{ opacity:.75; }
+
+.back-link{
+  text-decoration:none;
+  opacity:.8;
+}
 
 .project-content{
   max-width: 1100px;
@@ -506,6 +697,7 @@ h1{
   padding: 0;
   margin: 0;
 }
+
 .kpi-list li{
   padding: 6px 10px;
   border-radius: 999px;
@@ -513,171 +705,39 @@ h1{
   background: rgba(255,255,255,.55);
 }
 
-.gallery{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
-  gap: 12px;
-}
-.gallery img{
-  width: 100%;
-  border-radius: 12px;
-  border: 1px solid rgba(0,0,0,.08);
-}
-.gallery figcaption{
-  font-size: .9rem;
-  opacity: .8;
-  margin-top: 6px;
-}
-@media (max-width: 900px){
-  .gallery{ grid-template-columns: 1fr; }
-}
 /* =========================================
-   PROJETO 3 — AJUSTES FINAIS (SPACING + CARROSSEL)
-   Cole no FINAL do CSS para sobrescrever o necessário
+   PROJETO 3 — AJUSTES (SPACING + CARROSSEL + VIEWER)
 ========================================= */
 
-/* mais respiro no hero e no conteúdo */
 .project-hero{
   margin: 34px auto 18px;
 }
 
 .project-content{
-  gap: 28px;               /* antes 18px */
-  margin: 0 auto 64px;     /* mais “chão” */
+  gap: 28px;
+  margin: 0 auto 64px;
 }
 
-/* blocos mais confortáveis */
 .block{
-  padding: 24px;           /* antes 18px */
+  padding: 24px;
   border-radius: 18px;
   background: color-mix(in srgb, var(--surface) 78%, transparent);
   border: 1px solid var(--border);
   box-shadow: var(--shadow2);
 }
 
-/* títulos e textos com melhor ritmo */
-.block h2, .block h3{
+.block h2,
+.block h3{
   margin: 0 0 10px;
 }
+
 .block p{
   margin: 0;
   line-height: 1.75;
   color: var(--muted);
 }
 
-/* =========================================
-   GALERIA => CARROSSEL INLINE (SEM MODAL)
-========================================= */
-
-/* wrapper (se você tiver <figure class="gallery"> ou <div class="gallery">) */
-.gallery{
-  display: flex;                 /* vira faixa */
-  gap: 14px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 10px 6px 6px;
-  border-radius: 16px;
-
-  /* “snapping” deixa a rolagem mais gostosa */
-  scroll-snap-type: x mandatory;
-
-  /* esconder scrollbar */
-  scrollbar-width: none;
-}
-.gallery::-webkit-scrollbar{ display:none; }
-
-/* cada item / imagem */
-.gallery img{
-  width: min(520px, 84vw);
-  height: auto;
-  flex: 0 0 auto;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  box-shadow: var(--shadow2);
-  scroll-snap-align: start;
-
-  /* efeito */
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-.gallery img:hover{
-  transform: scale(1.02);
-  box-shadow: var(--shadow);
-}
-
-/* legenda (se existir) */
-.gallery figcaption{
-  margin-top: 8px;
-  color: var(--muted2);
-}
-
-/* =========================================
-   BOTÕES DE ROLAGEM (SE VOCÊ ADICIONAR NO HTML)
-========================================= */
-
-.gallery-wrap{
-  position: relative;
-}
-
-/* botões “flutuando” nas laterais */
-.gallery-nav{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--surface) 78%, transparent);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow2);
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  z-index: 2;
-  font-size: 22px;
-  font-weight: 900;
-  color: var(--text);
-}
-.gallery-nav:hover{
-  box-shadow: var(--shadow);
-}
-
-.gallery-nav.prev{ left: 10px; }
-.gallery-nav.next{ right: 10px; }
-
-/* mobile: botões um pouco menores */
-@media (max-width: 520px){
-  .gallery-nav{
-    width: 38px;
-    height: 38px;
-    font-size: 20px;
-  }
-}
-
-/* =========================================
-   IMPORTANTE: evitar conflito com .btn duplicado
-   (se quiser padronizar, essa regra força usar seu tema)
-========================================= */
-
-.project-card .btn,
-.project-content .btn{
-  background: linear-gradient(140deg,var(--accent2),var(--accent));
-  border: 1px solid transparent;
-  color: #fff;
-  font-weight: 900;
-  border-radius: 16px;
-}
-
-.project-card .btn--ghost,
-.project-content .btn--ghost{
-  background: transparent;
-  border-color: var(--border);
-  color: var(--text);
-}
-
-/* Case Projeto 3 — Carrossel sem modal (isolado) */
-
+/* ===== Carrossel Projeto 3 ===== */
 .p3-gallery{
   position: relative;
   margin-top: 14px;
@@ -695,7 +755,10 @@ h1{
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
 }
-.p3-gallery__track::-webkit-scrollbar{ display:none; }
+
+.p3-gallery__track::-webkit-scrollbar{
+  display:none;
+}
 
 .p3-gallery__item{
   flex: 0 0 auto;
@@ -717,7 +780,7 @@ h1{
 .p3-gallery__media img{
   width: 100%;
   height: 100%;
-  object-fit: contain; /* não corta texto de dashboard */
+  object-fit: contain;
   display: block;
   transition: transform .25s ease;
 }
@@ -734,7 +797,6 @@ h1{
   padding: 0 4px;
 }
 
-/* botões */
 .p3-gallery__nav{
   position: absolute;
   top: 50%;
@@ -756,10 +818,17 @@ h1{
   user-select: none;
 }
 
-.p3-gallery__nav:hover{ box-shadow: var(--shadow); }
+.p3-gallery__nav:hover{
+  box-shadow: var(--shadow);
+}
 
-.p3-gallery__nav--prev{ left: 10px; }
-.p3-gallery__nav--next{ right: 10px; }
+.p3-gallery__nav--prev{
+  left: 10px;
+}
+
+.p3-gallery__nav--next{
+  right: 10px;
+}
 
 .p3-gallery__nav[disabled]{
   opacity: .55;
@@ -773,9 +842,16 @@ h1{
     height: 40px;
     font-size: 20px;
   }
-  .p3-gallery__nav--prev{ left: 6px; }
-  .p3-gallery__nav--next{ right: 6px; }
+
+  .p3-gallery__nav--prev{
+    left: 6px;
+  }
+
+  .p3-gallery__nav--next{
+    right: 6px;
+  }
 }
+
 /* ===== Viewer fullscreen (Projeto 3) ===== */
 .p3-viewer{
   position: fixed;
@@ -788,7 +864,9 @@ h1{
   padding: 18px;
 }
 
-.p3-viewer.is-open{ display:flex; }
+.p3-viewer.is-open{
+  display:flex;
+}
 
 .p3-viewer__content{
   position: relative;
@@ -802,7 +880,6 @@ h1{
   overflow: hidden;
 }
 
-/* Track horizontal com scroll */
 .p3-viewer__track{
   height: 100%;
   display: flex;
@@ -813,7 +890,10 @@ h1{
   padding: 56px 18px 18px;
   scrollbar-width: none;
 }
-.p3-viewer__track::-webkit-scrollbar{ display:none; }
+
+.p3-viewer__track::-webkit-scrollbar{
+  display:none;
+}
 
 .p3-viewer__slide{
   flex: 0 0 auto;
@@ -830,7 +910,6 @@ h1{
   object-fit: contain;
 }
 
-/* Close */
 .p3-viewer__close{
   position: absolute;
   top: 12px;
@@ -845,7 +924,6 @@ h1{
   z-index: 2;
 }
 
-/* Nav */
 .p3-viewer__nav{
   position: absolute;
   top: 50%;
@@ -862,8 +940,13 @@ h1{
   font-weight: 900;
 }
 
-.p3-viewer__nav--prev{ left: 10px; }
-.p3-viewer__nav--next{ right: 10px; }
+.p3-viewer__nav--prev{
+  left: 10px;
+}
+
+.p3-viewer__nav--next{
+  right: 10px;
+}
 
 .p3-viewer__nav[disabled]{
   opacity: .5;
@@ -874,4 +957,229 @@ h1{
   .p3-viewer__content{
     height: 92vh;
   }
+}
+
+/* FIX: hamburger só no responsivo (força a regra) */
+#navToggle{
+  display:none !important;
+}
+
+@media (max-width:760px){
+  #navToggle{
+    display:inline-flex !important;
+  }
+}
+
+/* ================================
+   CENTRALIZAR CARD QUANDO SOBRA COLUNA (último item ímpar / ou único item)
+================================ */
+
+/* 1) Se existir APENAS 1 card na lista, centraliza ele */
+.projects-v2 > .p2:only-child{
+  max-width: 560px; /* ajuste se quiser: 520~620 */
+  justify-self: center;
+}
+
+/* 2) Se estiver em 2 colunas e SOBRAR 1 card na última linha (3 cards, 5 cards...) */
+@media (min-width: 900px){
+  .projects-v2 > .p2:last-child:nth-child(odd){
+    grid-column: 1 / -1; /* ocupa a linha toda */
+    max-width: 560px; /* e fica "no meio" */
+    justify-self: center;
+  }
+}
+
+/* =========================================
+   PATCH FINAL — NAV + BOTÕES + CARDS 
+========================================= */
+
+/* Variantes */
+.btn--primary{
+  background: linear-gradient(140deg,var(--accent2),var(--accent));
+  color:#fff;
+}
+
+
+.btn--soft{
+  background: color-mix(in srgb,var(--accent) 10%,var(--surface));
+  color: var(--accent);
+  border-color: transparent;
+}
+
+/* 3) Botões de ação do card SEM “cara” diferente */
+.p2__actions .btn{
+  font: inherit; /* garante igualdade visual */
+  min-height: 44px;
+}
+
+
+/* =========================================================
+   PATCH (SEM mexer no layout)
+   - Fonte única em tudo
+   - Botões com padrão único + hover azul
+   Cole NO FINAL do style.css atual
+========================================================= */
+
+/* 1) Fonte única em absolutamente tudo */
+html, body,
+button, input, textarea, select,
+h1,h2,h3,h4,h5,h6,
+p,span,small,li,a,label{
+  font-family: var(--font) !important;
+}
+
+/* 2) Base única de botão (pega .btn / .btn-primary / .btn--primary etc.) */
+.btn,
+a.btn,
+button.btn,
+.btn-primary, .btn-ghost, .btn-icon,
+.btn--primary, .btn--ghost, .btn--soft, .btn--outline,
+a[class*="btn"], button[class*="btn"]{
+  font-family: var(--font) !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  line-height: 1 !important;
+  letter-spacing: .2px !important;
+
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease, opacity .15s ease !important;
+  will-change: transform;
+}
+
+/* 3) Hover universal: “levanta” + efeito azul */
+.btn:hover,
+a.btn:hover,
+button.btn:hover,
+.btn-primary:hover, .btn-ghost:hover,
+.btn--primary:hover, .btn--ghost:hover, .btn--soft:hover, .btn--outline:hover,
+a[class*="btn"]:hover, button[class*="btn"]:hover{
+  transform: translateY(-1px);
+  box-shadow:
+    0 14px 34px rgba(2,6,23,.16),
+    0 12px 30px rgba(59,109,246,.30); /* glow azul */
+}
+
+/* 4) Hover MAIS forte no botão principal (gradiente) */
+.btn-primary:hover,
+.btn--primary:hover{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.35),
+    0 14px 34px rgba(59,109,246,.45);
+}
+
+/* 5) Active (clicando) */
+.btn:active,
+.btn-primary:active, .btn-ghost:active,
+.btn--primary:active, .btn--ghost:active, .btn--soft:active, .btn--outline:active{
+  transform: translateY(0px);
+  box-shadow: var(--shadow1);
+}
+
+/* =========================================
+   PROJETO 01 — PATCH LOCAL (somente nesta página)
+   Cole no FINAL do case-projeto-1.css
+========================================= */
+
+.cover-icon{
+  width: 56px;
+  height:56px;
+  display:grid;
+  place-items:center;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  box-shadow: var(--shadow1);
+  font-size: 24px;
+  margin: 0 auto 10px;
+}
+
+.cover-title{
+  font-weight:700;
+  margin-bottom: 4px;
+}
+
+.cover-sub{
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Placeholder que imita “imagem” mantendo padrão */
+.card-media.placeholder{
+  display: grid;
+  place-items: center;
+  background: radial-gradient(800px 280px at 20% 20%, rgba(37,99,235,.14), transparent 55%),
+              radial-gradient(800px 280px at 80% 20%, rgba(29,78,216,.10), transparent 55%),
+              rgba(2,6,23,.03);
+}
+
+:root[data-theme="dark"] .card-media.placeholder{
+  background: radial-gradient(800px 280px at 20% 20%, rgba(37,99,235,.22), transparent 55%),
+              radial-gradient(800px 280px at 80% 20%, rgba(29,78,216,.16), transparent 55%),
+              rgba(255,255,255,.03);
+}
+
+.ph-inner{
+  text-align: center;
+  padding: 18px;
+}
+
+.ph-icon{
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 10px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  box-shadow: var(--shadow1);
+  font-size: 24px;
+}
+
+.ph-title{
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.ph-sub{
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Garantir que os botões fiquem iguais aos outros cards */
+.card-actions{
+  display:flex;
+  gap:10px;
+  margin-top: 14px;
+  align-items:center;
+}
+
+:root{
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+
+html,
+body{
+  font-family: var(--font);
+}
+.skills-cards{
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.skills-cards div{
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.08);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.skills-title{
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 10px;
+  color: #0f172a;
 }
