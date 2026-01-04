@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Case: Automação de Dados | Bruna Sardou</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../../index.html" style="font-weight:800; text-decoration:none; color:var(--text); font-size:clamp(16px, 4vw, 20px); letter-spacing:-0.5px;">BRUNA SARDOU</a>
+      <nav style="display:flex; gap: clamp(10px, 3vw, 24px); align-items:center;">
+        <a href="../../index.html#projetos" style="text-decoration:none; font-weight:600; font-size:13px; color:var(--text);">Projetos</a>
+        <a href="#contato" class="btn btn-primary" style="padding:8px 15px; font-size: 12px;">Contato</a>
+        <button id="themeToggle" style="background:none; border:none; cursor:pointer; font-size:18px;">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding: clamp(40px, 8vw, 80px) 24px;">
+    <header style="margin-top: 20px;">
+      <span class="card-tag">Ciência de Dados & QA</span>
+      <h1 style="margin-bottom: 24px; font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.1;">Framework de Auditoria e Qualidade de Dados</h1>
+      <p class="lead" style="font-size: clamp(1rem, 2vw, 1.2rem);">Uma solução robusta para validar a integridade de bancos de dados e garantir a segurança de aplicações web através de testes automatizados.</p>
+     <div style="display:flex; gap:12px; margin-top:32px;">
+          <a href="https://github.com/brunasardou/automacao-de-dados" target="_blank" class="btn btn-primary" style="width: auto; padding: 12px 24px;">Ver no GitHub</a>
+     </div>
+    </header>
+
+    <section style="display: flex; flex-direction: column; align-items: center; gap: 32px; width: 100%; margin-top: 40px;">
+      <div class="card-media" style="width: 100%; height: auto; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: transparent;">
+        <img src="../img/Proj02/report1.png" 
+             class="card-img" 
+             data-imgs="../img/Proj02/report1.png,../img/Proj02/report2.png" 
+             style="width:100%; height: auto; display:block; cursor: zoom-in;" alt="Relatorio Final">
+      </div>
+      
+      <div style="width: 100%; max-width: 700px;">
+          <img src="../img/Proj02/report2.png" 
+             class="card-img" 
+             data-imgs="../img/Proj02/report1.png,../img/Proj02/report2.png" 
+             alt="Terminal de Execução" 
+             style="width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow); border: 1px solid var(--border); cursor: zoom-in;">
+       </div>
+    </section>
+
+    <section style="margin-top: 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
+      <div>
+        <h3 style="margin-bottom: 16px; font-weight: 800;">O Desafio</h3>
+        <p style="color: var(--muted); line-height: 1.6;">Processos manuais de validação de dados são lentos e propensos a erros humanos. O desafio era criar uma ferramenta que auditasse o banco de dados antes da interface, garantindo que inconsistências (como falta de estoque ou erros de preço) fossem detectadas preventivamente.</p>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 16px; font-weight: 800;">A Solução</h3>
+        <p style="color: var(--muted); line-height: 1.6;">Desenvolvi um motor em Python que utiliza <strong>Pandas</strong> para auditoria analítica e <strong>Selenium</strong> para validação funcional. A arquitetura é agnóstica (Multi-tenant), permitindo conectar em múltiplos bancos de dados apenas alterando um arquivo de configuração.</p>
+      </div>
+    </section>
+
+    <section style="margin-top: 60px;">
+      <h3 style="margin-bottom: 24px; font-weight: 800;">Destaques Técnicos</h3>
+      <div class="tech-pills">
+        <span class="pill">Python 3.13</span>
+        <span class="pill">MySQL & SQLAlchemy</span>
+        <span class="pill">PostgreSQL • Oracle • Firebird</span>
+        <span class="pill">Pandas Dataframes</span>
+        <span class="pill">Selenium & POM</span>
+        <span class="pill">Pytest (Execução Paralela)</span>
+        <span class="pill">Segurança (SQL Injection)</span>
+      </div>
+    </section>
+
+    <section style="margin-top: 60px; background: var(--surface); padding: clamp(20px, 5vw, 40px); border-radius: 12px; border: 1px solid var(--border);">
+      <h3 style="margin-bottom: 16px; font-weight: 800;">Resultados Alcançados</h3>
+      <ul style="color: var(--muted); padding-left: 20px; line-height: 1.8;">
+        <li><strong>Redução de Tempo:</strong> Execução de múltiplos cenários em paralelo, diminuindo o tempo de teste em 70%.</li>
+        <li><strong>Segurança:</strong> Identificação proativa de brechas de SQL Injection em campos de entrada.</li>
+        <li><strong>Confiabilidade:</strong> Relatórios HTML autossuficientes com screenshots automáticos para auditoria.</li>
+      </ul>
+    </section>
+
+  <footer class="footer-professional">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h4>Bruna Sardou</h4>
+          <p>Especialista em Processos e Dados. Transformando fluxos operacionais em inteligência estratégica de negócio.</p>
+        </div>
+      <section id="contato" class="grid_contato">
+        <nav class="footer-nav">
+          <div class="footer-nav__col">
+            <h5>Navegação</h5>
+            <ul class="footer-nav__links">
+              <li><a href="../../index.html#inicio" class="footer-nav__link">Início</a></li>
+              <li><a href="../../index.html#projetos" class="footer-nav__link">Projetos</a></li>
+              <li><a href="../../cv.html#cv" class="footer-nav__link">Currículo Profissional</a></li>
+            </ul>
+          </div>
+        
+          <div class="footer-nav__col">
+            <h5>Contato Profissional</h5>
+            <ul class="footer-nav__links">
+              <li><a href="mailto:brunasardou@gmail.com" class="footer-nav__link">E-mail</a></li>
+              <li><a href="https://linkedin.com/in/brunasardou" target="_blank" class="footer-nav__link">LinkedIn</a></li>
+              <li><a href="https://github.com/brunasardou" target="_blank" class="footer-nav__link">GitHub</a></li>
+            </ul>
+            </div>
+          </nav>
+        </div>
+       </section>  
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Bruna Sardou • Processos & Dados</p>
+        <p>Desenvolvido com foco em performance e estratégia.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  </script>
+</body>
+</html>

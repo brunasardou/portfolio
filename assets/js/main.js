@@ -1,13 +1,12 @@
 /* ============================================================
    Scripting por Bruna Sardou
-   Funcionalidades: Tema Dark/Light, Lightbox e Data Automática
+   Funcionalidades: Tema, Datas e Lightbox com Carrossel
 ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.documentElement;
     const themeBtn = document.querySelector('#themeToggle');
     
-    
-    // Gestão de Tema Integrada
+    // --- GESTÃO DE TEMA ---
     const applyTheme = (theme) => {
         theme === 'dark' ? root.setAttribute('data-theme', 'dark') : root.removeAttribute('data-theme');
         localStorage.setItem('main-theme', theme);
@@ -24,15 +23,70 @@ document.addEventListener('DOMContentLoaded', () => {
         applyTheme(isDark ? 'light' : 'dark');
     });
 
-    // Datas Dinâmicas (Footer e CV)
+    // --- DATAS DINÂMICAS ---
     const yearElement = document.getElementById('year');
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
+    if (yearElement) yearElement.textContent = new Date().getFullYear();
+
+    // --- LIGHTBOX COM CARROSSEL ---
+    
+    // 1. Injetar HTML do Modal se não existir
+    if (!document.getElementById('lightboxModal')) {
+        const modalHTML = `
+          <div id="lightboxModal" class="modal-lightbox">
+            <span class="modal-close">&times;</span>
+            <button class="nav-btn prev">&#10094;</button>
+            <div class="modal-container">
+                <img id="modalImg" src="" alt="View">
+            </div>
+            <button class="nav-btn next">&#10095;</button>
+          </div>`;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
     }
 
-    const cvDate = document.getElementById('cvDate');
-    if (cvDate) cvDate.textContent = new Date().toLocaleDateString('pt-BR');
+    const modal = document.getElementById("lightboxModal");
+    const modalImg = document.getElementById("modalImg");
+    const btnNext = document.querySelector('.next');
+    const btnPrev = document.querySelector('.prev');
+    
+    let currentImgs = [];
+    let currentIndex = 0;
 
-    // Função de Impressão (Apenas para o CV)
-    document.getElementById('btnPrint')?.addEventListener('click', () => window.print());
+    // 2. Abrir Lightbox
+    document.querySelectorAll('.card-img').forEach(img => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener('click', function() {
+            // Se tiver data-imgs (Projeto 03), transforma em array, senão usa apenas a src atual
+            const dataImgs = this.getAttribute('data-imgs');
+            currentImgs = dataImgs ? dataImgs.split(',') : [this.src];
+            currentIndex = 0;
+            
+            showImage();
+            modal.style.display = "flex";
+        });
+    });
+
+    function showImage() {
+        modalImg.src = currentImgs[currentIndex];
+        // Esconde setas se for imagem única
+        const displayStyle = currentImgs.length > 1 ? "block" : "none";
+        btnNext.style.display = displayStyle;
+        btnPrev.style.display = displayStyle;
+    }
+
+    // 3. Navegação
+    btnNext.onclick = (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % currentImgs.length;
+        showImage();
+    };
+
+    btnPrev.onclick = (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + currentImgs.length) % currentImgs.length;
+        showImage();
+    };
+
+    // 4. Fechar
+    document.querySelector('.modal-close').onclick = () => modal.style.display = "none";
+    modal.onclick = (e) => { if (e.target === modal || e.target.classList.contains('modal-container')) modal.style.display = "none"; };
 });
