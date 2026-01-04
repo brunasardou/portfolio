@@ -1,8 +1,6 @@
-/* Scripting por Bruna Sardou
-   Funcionalidades: Tema Dark/Light, Lightbox e Data Automática.
-*/
 /* ============================================================
-   ESTILO PROFISSIONAL — BRUNA SARDOU (SÉNIOR REFINED)
+   Scripting por Bruna Sardou
+   Funcionalidades: Tema Dark/Light, Lightbox e Data Automática
 ============================================================ */
 :root {
   --bg: #f8fafc;
@@ -289,30 +287,152 @@ h1 {
   margin-bottom: 8px;
 }
 
+/* ============================================================
+   RESPONSIVO
+============================================================ */
+
+/*Correção do Header*/
 @media (max-width: 768px) {
-  .footer-inner { flex-direction: column; text-align: center; }
-  .footer-nav { justify-content: center; gap: 30px; }
+    .header {
+        height: auto; /* Permite que o header cresça conforme o conteúdo */
+        padding: 15px 0;
+    }
+
+    .header-inner {
+        flex-direction: column !important;
+        gap: 12px;
+    }
+
+    .header-inner nav {
+        margin-top: 5px;
+        justify-content: center;
+        gap: 15px; /* Espaço entre Projetos, Contato e a Lua */
+    }
+}
+
+/*Correção do Grid de Projetos*/
+@media (max-width: 768px) {
+    .grid-projects {
+        grid-template-columns: 1fr !important; /* Força os cards a ocuparem a largura toda */
+        margin-top: 32px;
+    }
+
+    .hero {
+        padding: 60px 0 40px; /* Reduz o espaço no topo no celular */
+    }
+
+    h1 {
+        font-size: 2rem; /* Diminui o título para não quebrar muitas linhas */
+    }
+}
+
+/*Melhoria no Currículo*/
+@media (max-width: 768px) {
+    .no-print {
+        padding: 20px 0 !important;
+        align-items: center !important; /* Centraliza no mobile independente do desktop */
+    }
+
+    .no-print button {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
 @media print {
-  /* Esconde o menu, o rodapé e o botão de gerar PDF */
-  .header, 
-  .footer-professional, 
-  #themeToggle, 
-  .no-print { 
-    display: none !important; 
-  }
+    /* 1. Reset de Layout: Remove Flexbox/Grid que causam o salto de página */
+    html, body {
+        background: white !important;
+        color: black !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important; /* Essencial */
+    }
 
-  /* Garante que o currículo ocupe a folha toda sem bordas do site */
-  .cv-container { 
-    border: none !important; 
-    box-shadow: none !important; 
-    padding: 0 !important; 
-    margin: 0 !important; 
-    background: white !important; 
-  }
+    /* 2. Forçar o container a começar no topo absoluto */
+    .cv-container {
+        display: block !important;
+        position: static !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        transform: none !important;
+    }
 
-  body { 
-    background: white !important; 
-  }
+    /* 3. Esconder elementos e GARANTIR que não ocupem espaço */
+    .header, 
+    .footer-professional, 
+    #themeToggle,
+    .no-print {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 4. Controle de Quebra de Seção */
+    .cv-section {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        margin-bottom: 20px !important;
+        display: block !important;
+    }
+
+    /* 5. Ajuste de Título para o topo */
+    .cv-header {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
+/*Rodapé Responsivo*/
+@media (max-width: 768px) {
+    /* Ajuste do Header para não sobrepor */
+    .header { height: auto; padding: 15px 0; }
+    .header-inner { flex-direction: column !important; gap: 12px; }
+
+    /* Rodapé - Correção de Alinhamento */
+    .footer-inner {
+        flex-direction: column !important;
+        align-items: center !important; /* Centraliza os blocos */
+        text-align: center;
+        gap: 40px !important;
+    }
+
+    .footer-brand {
+        max-width: 100% !important;
+    }
+
+    .footer-nav {
+        flex-direction: column !important;
+        gap: 32px !important;
+        width: 100%;
+        align-items: center !important; /* Garante que as colunas fiquem no meio */
+    }
+
+    .footer-nav__col {
+        width: 100%;
+    }
+
+    .footer-nav__links {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Alinha os links (Início, Projetos...) um abaixo do outro no centro */
+        padding: 0;
+    }
+
+    .footer-nav__link {
+        margin-bottom: 12px;
+        font-size: 15px; /* Aumenta um pouco para facilitar o toque no celular */
+    }
+
+    .footer-bottom {
+        margin-top: 30px;
+        padding: 20px 0;
+        border-top: 1px solid var(--border);
+    }
 }

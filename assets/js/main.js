@@ -1,6 +1,7 @@
-/* Scripting por Bruna Sardou
-   Funcionalidades: Tema Dark/Light, Lightbox e Data Automática.
-*/
+/* ============================================================
+   Scripting por Bruna Sardou
+   Funcionalidades: Tema Dark/Light, Lightbox e Data Automática
+============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.documentElement;
     const themeBtn = document.querySelector('#themeToggle');
