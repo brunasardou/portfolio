@@ -200,9 +200,9 @@ h1 {
   background: #f1f5f9; 
   transform: translateY(-2px);
 }
-/* ============================================================
-   RODAPÉ REVISADO (ALINHAMENTO SÊNIOR)
-============================================================ */
+/* ====================
+   RODAPÉ REVISADO 
+======================= */
 .footer-professional {
   background-color: var(--bg);
   border-top: 1px solid var(--border);
