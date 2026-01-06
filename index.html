@@ -91,23 +91,44 @@
               <div style="width:10px; height:10px; border-radius:50%; background:#27c93f;"></div>
             </div>
             <code style="color:#94a3b8; font-size:13px; font-family:monospace; line-height:1.5;">
-              import pandas as pd<br>
-              # Extração Multi-DB: MySQL, Oracle...<br>
-              def run_extraction(db_type):<br>
-              &nbsp;&nbsp;df = pd.read_sql(query, conn)<br>
-              &nbsp;&nbsp;return df.to_csv('output.csv')
+              <pre class="code-mock">
+              <span class="kw">CONNECT</span> → SQL Server | MySQL | SQLite | PostgreSQL
+                      ↓
+              <span class="kw">QUERY</span> → SQL dinâmico validado
+                      ↓
+              <span class="kw">ANALYZE</span> → Z-Score (detecção de anomalias)
+                      ↓
+              <span class="kw">EXPORT</span> → CSV | JSON | Parquet
+              </pre>
             </code>
           </div>
           <div class="card-body">
-            <span class="card-tag">Python • ETL</span>
-            <h3 class="card-title">Software de Extração de Dados</h3>
-            <p style="color:var(--muted); font-size:14px;">Script de ETL para extração em larga escala de múltiplos bancos (Oracle, SQL, Azure) para consumo em Power BI.</p>
-            <a href="https://github.com/brunasardou/python-extrator-dados-powerbi" target="_blank" class="btn-link">Ver no GitHub →</a>
+            <span class="card-tag">Python · Pandas · SQLAlchemy · Tkinter · SQLite · SQL Server · MySQL · PostgreSQL · PyODBC · PyArrow · Estatística Descritiva</span>
+            <h3 class="card-title">Data Intelligence Engine — Extração, Análise e Exportação Multi-Banco</h3>
+            <p style="color:var(--muted); font-size:14px;">Ferramenta desktop em Python para extração de dados SQL, detecção de anomalias (z-score) e exportação para BI.</p>
+            <a href="assets/cases/python-extrator-dados-powerbi.html" class="btn-link">Ver Case Detalhado →</a>
           </div>
         </article>
 
         <article class="card">
-          <div class="card-media"><img src="assets/img/Proj02/report1.png" alt="QA Framework" class="card-img"></div>
+          <div class="card-media" style="padding:24px; display:flex; flex-direction:column; gap:12px; background: #0f172a; min-height: 200px; justify-content: center;">
+            <div style="display:flex; gap:6px;">
+              <div style="width:10px; height:10px; border-radius:50%; background:#ff5f56;"></div>
+              <div style="width:10px; height:10px; border-radius:50%; background:#ffbd2e;"></div>
+              <div style="width:10px; height:10px; border-radius:50%; background:#27c93f;"></div>
+            </div>
+            <code style="color:#94a3b8; font-size:13px; font-family:monospace; line-height:1.5;">
+              <pre class="code-mock">
+              <span class="kw">COLLECT</span> → Dados | Interfaces | Logs
+                      ↓
+              <span class="kw">VALIDATE</span> → Integridade (Pandas)
+                      ↓
+              <span class="kw">TEST</span> → UI Automation (Selenium)
+                      ↓
+              <span class="kw">REPORT</span> → Evidências e alertas
+              </pre>
+            </code>
+          </div>
           <div class="card-body">
             <span class="card-tag">Python • Selenium • SQL</span>
             <h3 class="card-title">Framework de Auditoria e QA</h3>

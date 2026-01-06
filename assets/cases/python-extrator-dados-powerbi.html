@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Case | Data Intelligence Engine — Bruna Sardou</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+  <div class="container header-inner">
+    <a href="../../index.html" style="font-weight:800; text-decoration:none; color:var(--text); font-size:clamp(16px, 4vw, 20px); letter-spacing:-0.5px;">BRUNA SARDOU</a>
+    <nav style="display:flex; gap:clamp(10px, 3vw, 24px); align-items:center;">
+      <a href="../../index.html#projetos" style="text-decoration:none; font-weight:600; font-size:13px; color:var(--text);">Projetos</a>
+      <a href="#contato" class="btn btn-primary" style="padding:8px 15px; font-size: 12px;">Contato</a>
+      <button id="themeToggle" style="background:none; border:none; cursor:pointer; font-size:18px;">🌙</button>
+    </nav>
+  </div>
+</header>
+
+  <main class="container" style="padding: clamp(40px, 8vw, 80px) 24px;">
+    <section class="hero__grid">
+      <div class="hero__text">
+        <span class="card-tag">Python • Estatística Descritiva • SQLAlchemy • Pandas • Z-score</span>
+        <h1 style="margin-top:12px; font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.1;">Data Intelligence Engine — Extração, Análise e Exportação Multi-Banco</h1>
+        <p class="lead" style="font-size: clamp(1rem, 2vw, 1.2rem); max-width: 850px;">
+            Ferramenta desktop desenvolvida em Python para extração de dados estruturados
+            a partir de múltiplos bancos (SQLite, SQL Server, MySQL, PostgreSQL, Oracle),
+            com validação de conexão, execução de queries dinâmicas e exportação
+            em formatos otimizados para BI (CSV, JSON e Parquet).
+
+            O projeto evoluiu para incluir análise estatística automatizada (Z-score),
+            permitindo detecção de anomalias e outliers diretamente na etapa de extração,
+            reduzindo retrabalho analítico em dashboards e pipelines de dados.
+        </p>
+        <div style="display:flex; gap:12px; margin-top:32px;">
+          <a href="https://github.com/brunasardou/python-extrator-dados-powerbi" target="_blank" class="btn btn-primary" style="width: auto; padding: 12px 24px;">Ver no GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top: 60px;">
+      <div class="card" style="padding: 0; overflow: hidden; border-radius: 12px; cursor: zoom-in; margin-bottom: 24px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        <img src="../img/Proj04/report_SQLServer.png" 
+             class="card-img open-lightbox" 
+             data-imgs="../img/Proj04/report_SQLServer.png,../img/Proj04/report_SQLServer_zscore.png,../img/Proj04/report_SQLServer_zscore_csv.png" 
+             style="width:100%; height: auto; display:block;" alt="Tela do extrator com conexão SQL Server">
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px;">
+        <img src="../img/Proj04/report_SQLServer_zscore.png" class="card-img open-lightbox" 
+             data-imgs="../img/Proj04/report_SQLServer_zscore.png,../img/Proj04/report_SQLServer_zscore_csv.png" 
+             style="width:100%; height: auto; border-radius: 12px; cursor: zoom-in; border:1px solid var(--border); box-shadow: var(--shadow);" alt="Resultado com coluna de z-score e flag de anomalia">
+        <img src="../img/Proj04/report_SQLServer_zscore_csv.png" class="card-img open-lightbox" 
+             data-imgs="../img/Proj04/report_SQLServer_zscore_csv.png,../img/Proj04/report_SQLServer.png,../img/Proj04/report_SQLServer_zscore.png," 
+             style="width:100%; height: auto; border-radius: 12px; cursor: zoom-in; border:1px solid var(--border); box-shadow: var(--shadow);" alt="Exportação para CSV/Parquet/JSON">
+      </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+    <div class="card" style="padding: clamp(20px, 5vw, 32px); border-radius: 12px; border: 1px solid var(--border);">
+        <h3 style="font-weight: 900; margin-bottom: 12px;">Arquitetura do projeto</h3>
+        <p style="color:var(--muted); line-height: 1.75;">
+        Estrutura modular separando interface (Tkinter), camada de conexão (SQLAlchemy),
+        processamento (Pandas) e exportação (CSV/JSON/Parquet), facilitando manutenção e evolução.
+        </p>
+    </div>
+    <div class="card" style="padding: clamp(20px, 5vw, 32px); border-radius: 12px; border: 1px solid var(--border);">
+        <h3 style="font-weight: 900; margin-bottom: 12px;">Detecção de anomalias (Z-score)</h3>
+        <p style="color:var(--muted); line-height: 1.75;">
+        O z-score mede o desvio do valor em relação ao padrão do conjunto de dados.
+        Na prática, ajuda a identificar outliers e inconsistências antes do consumo no BI,
+        reduzindo retrabalho na etapa de dashboard/pipeline.
+        </p>
+    </div>
+    </div>
+
+
+        <!-- CONTEXTO / PROBLEMA -->
+    <section style="margin-top: 48px;">
+      <div class="card" style="padding: clamp(20px, 5vw, 32px); border-radius: 12px; border: 1px solid var(--border);">
+        <h2 style="font-weight: 900; margin-bottom: 10px;">Contexto</h2>
+        <p style="color:var(--muted); line-height: 1.75; max-width: 980px;">
+          Em cenários de BI, grande parte do tempo é consumida na extração, validação e preparo dos dados.
+          Muitas inconsistências (outliers, valores fora do padrão, erros de digitação) só aparecem depois que o dashboard já está montado,
+          gerando retrabalho e atrasos.
+        </p>
+      </div>
+    </section>
+
+    <!-- SOLUÇÃO -->
+    <section style="margin-top: 18px;">
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;">
+        <div class="card" style="padding: clamp(20px, 5vw, 32px); border-radius: 12px; border: 1px solid var(--border);">
+          <h3 style="font-weight: 900; margin-bottom: 10px;">Solução</h3>
+          <p style="color:var(--muted); line-height: 1.75;">
+            Ferramenta desktop em Python para conectar em bancos SQL, executar queries dinâmicas e exportar dados prontos para BI
+            (CSV/JSON/Parquet), com análise opcional de Z-score para identificar anomalias na extração.
+          </p>
+        </div>
+        <div class="card" style="padding: clamp(20px, 5vw, 32px); border-radius: 12px; border: 1px solid var(--border);">
+          <h3 style="font-weight: 900; margin-bottom: 10px;">Quando usar</h3>
+          <ul style="margin:0; padding-left: 18px; color:var(--muted); line-height: 1.75;">
+            <li>Validação rápida antes do dashboard</li>
+            <li>Detecção de outliers em métricas (valor, tempo, custo)</li>
+            <li>Exportação para Power BI / pipelines analíticos</li>
+            <li>Testes com grandes volumes (stress test)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUNCIONALIDADES -->
+    <section style="margin-top: 18px;">
+      <div class="card" style="padding: clamp(20px, 5vw, 32px); border-radius: 12px; border: 1px solid var(--border);">
+        <h3 style="font-weight: 900; margin-bottom: 14px;">Principais funcionalidades</h3>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px;">
+          <div style="padding: 14px 16px; border: 1px solid var(--border); border-radius: 12px;">
+            <strong>Conexão multi-banco</strong>
+            <p style="margin:6px 0 0; color:var(--muted); line-height: 1.6;">SQLite, SQL Server, MySQL, PostgreSQL e Oracle (em evolução).</p>
+          </div>
+          <div style="padding: 14px 16px; border: 1px solid var(--border); border-radius: 12px;">
+            <strong>Query dinâmica</strong>
+            <p style="margin:6px 0 0; color:var(--muted); line-height: 1.6;">Execução de SQL customizado com retorno via Pandas.</p>
+          </div>
+          <div style="padding: 14px 16px; border: 1px solid var(--border); border-radius: 12px;">
+            <strong>Z-score (opcional)</strong>
+            <p style="margin:6px 0 0; color:var(--muted); line-height: 1.6;">Flag de anomalia e coluna de z-score para outliers.</p>
+          </div>
+          <div style="padding: 14px 16px; border: 1px solid var(--border); border-radius: 12px;">
+            <strong>Exportação</strong>
+            <p style="margin:6px 0 0; color:var(--muted); line-height: 1.6;">CSV (Excel), JSON (API) e Parquet (performance).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+        <section style="margin-top: 28px;">
+    <div class="card" style="padding: clamp(20px, 5vw, 32px); border-radius: 12px; border: 1px solid var(--border);">
+        <h3 style="font-weight: 900; margin-bottom: 10px;">Como testar rapidamente</h3>
+        <ol style="margin: 0; padding-left: 18px; color:var(--muted); line-height: 1.75;">
+        <li>Selecione o motor (ex.: SQL Server/SQLite).</li>
+        <li>Preencha os parâmetros de conexão e clique em <strong>Testar Conexão</strong>.</li>
+        <li>Execute uma query (ex.: <code>SELECT TOP 100 * FROM dbo.vendas_big</code>).</li>
+        <li>Opcional: aplique Z-score na coluna <code>valor</code>.</li>
+        <li>Exporte em CSV/JSON/Parquet.</li>
+        </ol>
+    </div>
+    </section>
+  </main>
+
+
+  <footer class="footer-professional">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h4>Bruna Sardou</h4>
+          <p>Especialista em Processos e Dados. Transformando fluxos operacionais em inteligência estratégica de negócio.</p>
+        </div>
+      <section id="contato" class="grid_contato">
+        <nav class="footer-nav">
+          <div class="footer-nav__col">
+            <h5>Navegação</h5>
+            <ul class="footer-nav__links">
+              <li><a href="../../index.html#inicio" class="footer-nav__link">Início</a></li>
+              <li><a href="../../index.html#projetos" class="footer-nav__link">Projetos</a></li>
+              <li><a href="../../cv.html#cv" class="footer-nav__link">Currículo Profissional</a></li>
+            </ul>
+          </div>
+        
+          <div class="footer-nav__col">
+            <h5>Contato Profissional</h5>
+            <ul class="footer-nav__links">
+              <li><a href="mailto:brunasardou@gmail.com" class="footer-nav__link">E-mail</a></li>
+              <li><a href="https://linkedin.com/in/brunasardou" target="_blank" class="footer-nav__link">LinkedIn</a></li>
+              <li><a href="https://github.com/brunasardou" target="_blank" class="footer-nav__link">GitHub</a></li>
+            </ul>
+            </div>
+          </nav>
+        </div>
+       </section>  
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Bruna Sardou • Processos & Dados</p>
+        <p>Desenvolvido com foco em performance e estratégia.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  
+</body>
+</html>
